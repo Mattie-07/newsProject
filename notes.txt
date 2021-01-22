@@ -1,0 +1,9 @@
+1/22/2020
+Statements installed so far.
+    npm init 
+    express
+    ejs 
+    cookie-session 
+    sequelize
+
+    
