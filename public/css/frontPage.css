@@ -1,0 +1,21 @@
+.hero{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    text-align: center; 
+}
+.background{
+    background-color: rgb(2, 2, 26);
+    color: #FFF;
+}
+footer{
+    vertical-align: bottom;
+    bottom: 0;
+    left: 0;
+    text-align:center;
+    position:relative
+}
+li{
+    list-style-type: none;
+}
