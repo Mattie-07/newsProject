@@ -1,3 +1,11 @@
 body{
     background-color: rgb(255, 255, 255);
 }
+
+.img-responsive{
+    height: 400px;
+}
+
+.navbar{
+    height: 60px;
+}
