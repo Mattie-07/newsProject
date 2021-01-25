@@ -6,9 +6,9 @@ const router = express.Router();
 //router.use(express.urlencoded({extended: false}));
 // router.use(express.json())
 
-router.get('/index', (req, res) => {
+router.get('/', (req, res) => {
   
-    res.send('index')
+    res.render('index')
 })
 
 module.exports = router;
