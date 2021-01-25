@@ -1,21 +1,25 @@
 const express = require('express');
 const app = express();
-const PORT = 3000
 
-//ejs
+
+app.use(express.urlencoded({extended: false}));
+app.use(express.json());
+
+
+//views 
 app.set('view engine', 'ejs');
 
-//public
-app.use(express.static('public'))
-
-//route references
-app.use(require('./routes/index'))
-app.use(require('./routes/registration'))
+//public folder
+app.use(express.static('public'));
 
 
 
-app.listen(PORT, () => {
-  
-    console.log(`listening on port ${PORT}`);
-})
-//npm install body-parser
+app.use(require('./routes'));
+app.use(require('./routes/registration'));
+app.use(require('./routes/login'));
+
+
+app.listen(3000, () => {
+
+    console.log('listening on port 3000');
+}) 
