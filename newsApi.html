@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            color: blue;
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    news Api
+
+   <div>
+
+   </div>
+
+    <script>
+
+        fetch("http://newsapi.org/v2/everything?q=bitcoin&from=2020-12-24&sortBy=publishedAt&apiKey=86e9745df35749c2b909c52955f0a08e")
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+                news = data.articles[0].title;
+                
+                console.log(news)
+
+                let div = document.querySelector('div');
+                div.textContent = `The title is: ${news}`;
+            
+            })
+            .catch((error)=>{
+                console.log(error)
+            })
+
+        </script>
+
+</body>
+
+</html>
