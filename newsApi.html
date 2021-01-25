@@ -17,26 +17,46 @@
     news Api
 
    <div>
-
+    <img src="" alt="">
    </div>
+
+   <ul>
+
+   </ul>
+
+  
 
     <script>
 
-        fetch("http://newsapi.org/v2/everything?q=bitcoin&from=2020-12-24&sortBy=publishedAt&apiKey=86e9745df35749c2b909c52955f0a08e")
+        //let date = new Date();
+
+        fetch("http://newsapi.org/v2/everything?q=bitcoin&from=2020-12-25&sortBy=publishedAt&apiKey=86e9745df35749c2b909c52955f0a08e")
             .then(response => response.json())
             .then(data => {
                 console.log(data);
-                news = data.articles[0].title;
-                
-                console.log(news)
-
-                let div = document.querySelector('div');
-                div.textContent = `The title is: ${news}`;
+               
+                let htmlArr = data.articles.map(obj =>{
+                    return `<li> ${obj.author}  ${obj.title}  </li>`
+                })
             
+                let ul = document.querySelector('ul');
+                ul.innerHTML = htmlArr.join('');
             })
-            .catch((error)=>{
-                console.log(error)
+
+            
+            //fetching the imges
+            fetch("http://newsapi.org/v2/everything?q=bitcoin&from=2020-12-25&sortBy=publishedAt&apiKey=86e9745df35749c2b909c52955f0a08e")
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+                let htmlArr = data.articles.map(obj =>{
+                    return `<img src="${obj.urlToImage}" alt=""> `
+                })
+            
+                let div = document.querySelector('div');
+                div.innerHTML = htmlArr.join('');
             })
+        
 
         </script>
 
