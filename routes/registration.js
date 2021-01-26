@@ -8,7 +8,7 @@ const router = express.Router();
 // router.use(express.json())
 
 
-router.get('/:registration', (req, res) => {
+router.get('/registration', (req, res) => {
 
     res.send('registration')
 })
