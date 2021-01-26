@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+const helmet = require('helmet');
 
 
 app.use(express.urlencoded({extended: false}));
@@ -11,6 +12,7 @@ app.set('view engine', 'ejs');
 
 //public folder
 app.use(express.static('public'));
+app.use(helmet());
 
 //routes
 app.use(require('./routes/index'));
