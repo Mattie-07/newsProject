@@ -8,6 +8,16 @@
         <%- include('partials/template/header.ejs')  %>
 
 
+
+        <h1>Login</h1>
+        <form action="/login" method="POST">
+    
+            username: <input type="text" name="username"><br>
+            password: <input type="password" name="password"><br>
+    
+            <input type="submit">
+        </form>
+
         <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
 
 <div id="id01" class="modal">
@@ -30,6 +40,7 @@
         <input type="checkbox" checked="checked" name="remember"> Remember me
       </label>
     </div>
+
 
     <div class="container" style="background-color:#f1f1f1">
       <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
