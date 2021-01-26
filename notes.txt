@@ -4,6 +4,15 @@ Statements installed so far.
     express
     ejs 
     cookie-session 
-    sequelize
-
+    pg 
+    pg-hstore
     
+After:
+    npm install -g sequelize-cli 
+Run the command:
+    sequelize init
+
+
+The seeders file is there for all the inital data of a db. The reason why it is created is so that when hosting on something like AWS, all of the information can be created in a single operation
+
+When creating new tables it is a two step process, first creating the models with "sequelize model:generate" then with 'sequelize db:migrate" which will create the tables and keep a history of whats been created.
