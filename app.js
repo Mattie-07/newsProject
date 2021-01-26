@@ -14,6 +14,10 @@ app.use(express.static('public'));
 
 //routes
 app.use(require('./routes/index'));
+<<<<<<< HEAD
+app.use(require('./routes/login'));
+=======
+>>>>>>> d6c63cfdb15ecb16883adf449bafe886f6f1d5d0
 app.use(require('./routes/registration'));
 
 //access to the public folder
