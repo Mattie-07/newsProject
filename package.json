@@ -15,10 +15,17 @@
     "cookie-sessions": "0.0.2",
     "ejs": "^3.1.5",
     "express": "^4.17.1",
+<<<<<<< HEAD
     "helmet": "^4.4.1",
     "newsapi": "^2.4.1",
+=======
+
+>>>>>>> d6c63cfdb15ecb16883adf449bafe886f6f1d5d0
     "pg": "^8.5.1",
     "pg-hstore": "^2.3.3",
+    "newsapi": "^2.4.1",
+    "helmet": "^4.4.1",
+
     "sequelize": "^6.4.0"
   }
 }
