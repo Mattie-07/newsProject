@@ -12,7 +12,9 @@
         <%- include('partials/template/header.ejs')  %>
         <h1></h1>
         <img src="" class="img-responsive">    
+
         <%- include('partials/template/jsdefault.ejs')  %>
+
         <script>
             
         fetch("http://newsapi.org/v2/everything?q=bitcoin&from=2020-12-26&sortBy=publishedAt&apiKey=86e9745df35749c2b909c52955f0a08e")
@@ -33,5 +35,7 @@
             })
 
         </script>
+
+        <%- include('partials/template/jsdefault.ejs')  %>
     </body>
 </html>
