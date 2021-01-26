@@ -12,11 +12,11 @@ app.set('view engine', 'ejs');
 //public folder
 app.use(express.static('public'));
 
-
-
-app.use(require('./routes'));
+//routes
+app.use(require('./routes/index'));
 app.use(require('./routes/registration'));
-app.use(require('./routes/login'));
+
+//access to the public folder
 
 
 app.listen(3000, () => {
