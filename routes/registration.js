@@ -9,7 +9,7 @@ const router = express.Router();
 
 
 router.get('/:registration', (req, res) => {
-  
+
     res.send('registration')
 })
 module.exports = router;

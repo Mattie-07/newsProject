@@ -1,6 +1,12 @@
 const express = require("express");
 const router = express.Router();
-const authReq = require('../auth/index.js');
+const axios = require('axios');
+
+
+
+router.get('/' , (req, res) =>{
+        res.render('index')
+})
 
 router.get("/", (req, res) => {
   res.render("index");

@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.21.1",
     "bcryptjs": "^2.4.3",
     "cookie-session": "^1.4.0",
     "cookie-sessions": "0.0.2",
@@ -20,6 +21,7 @@
     "passport-local": "^1.0.0",
     "pg": "^8.5.1",
     "pg-hstore": "^2.3.3",
+
     "sequelize": "^6.4.0"
   }
 }
