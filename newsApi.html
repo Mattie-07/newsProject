@@ -19,35 +19,21 @@
 
 <div class = "container">
     <!--header-->
-        <!-- <nav class="navbar navbar-expand-lg cp-text-accent transparent fixed-top ">
+    <!-- <nav>
+        <ul>
+            <li><a href="#">Company Name</a></li>
+        </ul>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Products</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav> -->
 
-    <ul>
-
-    </ul>
 
 
-                
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ml-auto mr-auto">
-                        <li class="nav-item active">
-                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                        </li>
-                        <li class="nav-item">
-                        <a class="nav-link" href="#">About Us</a>
-                        </li>
-                        <li class="nav-item">
-                        <a class="nav-link" href="#">Login</a>
-                        </li>
-                        <li class="nav-item">
-                        <a class="nav-link" href="#">Registration</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav> -->
     <!-- Slideshow container -->
     <div class="slideshow-container">
 
@@ -118,8 +104,6 @@
         let date = new Date();
         let api = '86e9745df35749c2b909c52955f0a08e'
         fetch(`http://newsapi.org/v2/everything?q=bitcoin&from=${date}&sortBy=publishedAt&apiKey=${api}`)
-
-
             .then(response => response.json())
             .then(data => {
                 console.log(data);
@@ -139,8 +123,6 @@
                 console.log(data);
                 let htmlArr = data.articles.map(obj =>{
                     return `${obj.urlToImage}`
-
-            
                 })
                 
                 
@@ -153,16 +135,10 @@
                     let img6 = document.querySelector('#img6');
                     
                     let img11 = document.createElement('img');
-
-
                     let img22 = document.createElement('img');
-
                     let img33 = document.createElement('img');
-
                     let img44 = document.createElement('img');
-
                     let img55 = document.createElement('img');
-
                     let img66 = document.createElement('img');
 
 
@@ -182,12 +158,7 @@
                     img6.appendChild(img66);
 
             })
-
-                
-
-        
-
-        </script> 
+    </script> 
 
 <script src="public/js/slidshow.js"></script>
 <!-- Optional JavaScript -->
