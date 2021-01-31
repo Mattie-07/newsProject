@@ -117,6 +117,34 @@ body{
 }
 
 /* --------------------ends of slideshow--------------- */
+/*------------------SIDE BAR START ---------------------*/
+
+.sidebar-title {
+  text-align: center;
+  border: #ffcb9a;
+  border-style: solid;
+}
+
+.sidebar{
+  z-index: 1;
+  border-width: 3px;
+  border-style: solid;
+  border-color: #ffcb9a;
+  width:fit-content;
+  padding: 10px;
+  background-color: white;
+}
+
+
+
+
+
+
+
+
+
+/*----------------End Sidebar -------------------*/
+
 
 /* ------------login CSS-------------- */
 
