@@ -1,2 +1,14 @@
 pbbkdf2 is brought in with the nodejs fucntion require.
-crypto is brought in with the nodejs function require. Require takes as an argument the name of the nopm
+crypto is brought in with the nodejs function require. Require takes as an argument the name of the npm   
+
+A session is a place to store data for the user to access across requests.
+    every user that visits a sight has a unique session
+
+In order for cookie sessions to be used the npm key word below needs to be installed
+    npm install cookie-session
+Then 
+    const = cookieSession = require("cookie-session")
+
+using req.session.name = "name"; is the way that we initialize the cookie with a value. This can be done in the index ('/') route and be used in different routes afterward with res.send(req.session.name)
+Cookie Created!
+Now at any point when someone goes to a different route, the cookie still remains on the client side.
