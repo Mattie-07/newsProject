@@ -4,7 +4,7 @@ const socket = io();
 let chatUsername = document.querySelector('#chat-username');
 let chatMessage = document.querySelector('#chat-message');
 
-socket.on('connection', ()=>{
+// socket.on('connection', ()=>{
 
     
     let chatForm = document.querySelector('form');
@@ -36,11 +36,10 @@ socket.on('connection', ()=>{
             newMessage.className = "bg-info text-warning chat-text"
         }
 
-        <p class= "">username message</p>
         newMessage.innerHTML = `<strong>${data.username}</strong>: ${data.message}`;
 
         chatDisplay.insertBefore(newMessage, chatDisplay.firstChild);
     })
 
 
-})
+// })

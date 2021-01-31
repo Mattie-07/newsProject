@@ -2,10 +2,7 @@
 const express = require('express');
 const app = express();
 const helmet = require('helmet');
-<<<<<<< HEAD
 const socket = require('socket.io');
-=======
->>>>>>> main
 
 
 app.use(express.urlencoded({extended: false}));
@@ -20,23 +17,17 @@ app.set('view engine', 'ejs');
 //public folder
 app.use(express.static('public'));
 app.use(helmet());
-<<<<<<< HEAD
 
 //passport
 app.use(passport.initialize());
 app.use(passport.session());
-=======
->>>>>>> main
 
 //routes
 app.use(require('./routes/index'));
 app.use(require('./routes/registration'));
 app.use(require('./routes/login'));
-<<<<<<< HEAD
 app.use(require('./routes/error'));
 app.use(require('./routes/chat'));
-=======
->>>>>>> main
 
 //access to the public folder
 
