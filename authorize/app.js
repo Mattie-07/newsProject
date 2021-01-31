@@ -1,6 +1,31 @@
 const pbkdf2 = require('pbkdf2');
 const crypto = require("crypto");
+const cookie = require('cookie-session');
 
+app.use(cookie({
+    name: "session",
+    keys: ["somethingSomething"],
+    maxAge: 7 * 24 * 60 * 60 * 1000
+}))
+
+app.use(express.urlencoded({extended:false}));
+app.use(express.json());
+
+app.set('view engine', 'ejs')
+
+app.get('/', (req, res) =>{
+    req.session.name = "Matthew"
+    res.send('home Page');
+}) 
+app.get('/login' ,(req, res) =>{
+    res.render('login')
+})
+app.post('/login' , (req, res) =>{
+    //from here we are going to get the information that was posted in the ejs file
+    let userID = req.body.userID;
+    let password = req.body.password;
+
+})
 
 let password ='StrongPassword15';
 let salt = crypto.randomBytes(20).toString('hex');
