@@ -1,0 +1,2 @@
+pbbkdf2 is brought in with the nodejs fucntion require.
+crypto is brought in with the nodejs function require. Require takes as an argument the name of the nopm

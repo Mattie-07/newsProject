@@ -10,16 +10,33 @@
         </div>
 
         <%- include('partials/template/header.ejs')  %>
-
-        <%- include('partials/template/jsdefault.ejs')  %>
- 
         <h1></h1>
         <img src="" class="img-responsive">    
-        
 
-    <script>
+        <%- include('partials/template/jsdefault.ejs')  %>
 
-    </script>
-    
+        <script>
+        var date = new Date ();
+        var api = "86e9745df35749c2b909c52955f0a08e"
+        fetch(`http://newsapi.org/v2/everything?q=bitcoin&from=${date}&sortBy=publishedAt&apiKey=${api}`)
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+                news = data.articles[0].title;
+                image = data.articles[0].urlToImage;
+                console.log(news)
+
+                let h1 = document.querySelector('h1');
+                h1.textContent = `The title is: ${news}`;
+                let img = document.querySelector('img');
+                img.src = image;
+            })
+            .catch((error)=>{
+                console.log(error)
+            })
+
+        </script>
+
+        <%- include('partials/template/jsdefault.ejs')  %>
     </body>
 </html>
