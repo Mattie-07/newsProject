@@ -16,3 +16,6 @@ Run the command:
 The seeders file is there for all the inital data of a db. The reason why it is created is so that when hosting on something like AWS, all of the information can be created in a single operation
 
 When creating new tables it is a two step process, first creating the models with "sequelize model:generate" then with 'sequelize db:migrate" which will create the tables and keep a history of whats been created.
+
+On line 18 of resgistraition.js
+Middleware calls inside of the DB are going to have an async call.
