@@ -17,5 +17,5 @@ router.get('/error', (req, res)=>{
         res.send('error')
 })
 
-router.get('/logout', (req, res))
+// router.get('/logout', (req, res))
 module.exports = router;
