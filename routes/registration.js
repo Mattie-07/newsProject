@@ -11,22 +11,22 @@ router.get("/registration", (req, res) => {
     let username = req.body.username;
     let password = req.body.password;
     let email = req.body.email;
-
+        console.log(req.body);
     //hash our password
 
     try {
         let passwordEncrypted = bcrypt.hashSync(password, 8);
-
         //add logic for duplicate users
         let insertResult = await db.users.create({
-        username: username,
+        userName: username,
         email: email,
         password: passwordEncrypted,
-        roleID: 1,
+        roleID: 1
         });
 
         res.redirect("/login");
     } catch (error) {
+        console.log(error);
         res.send(`error: can't register this username`);
     }
 });
