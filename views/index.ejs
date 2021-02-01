@@ -16,9 +16,8 @@
         <%- include('partials/template/jsdefault.ejs')  %>
 
         <script>
-        var date = new Date ();
-        var api = "86e9745df35749c2b909c52955f0a08e"
-        fetch(`http://newsapi.org/v2/everything?q=bitcoin&from=${date}&sortBy=publishedAt&apiKey=${api}`)
+            
+        fetch("http://newsapi.org/v2/everything?q=bitcoin&from=2021-01-30&sortBy=publishedAt&apiKey=86e9745df35749c2b909c52955f0a08e")
             .then(response => response.json())
             .then(data => {
                 console.log(data);
