@@ -10,7 +10,7 @@ const router = express.Router();
 
 router.get('/registration', (req, res) => {
 
-    res.send('registration')
+    res.render('registration')
 })
 module.exports = router;
 

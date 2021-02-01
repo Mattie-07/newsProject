@@ -92,7 +92,8 @@
 
             
             //fetching the imges
-            fetch("http://newsapi.org/v2/everything?q=bitcoin&from=2020-12-26&sortBy=publishedAt&apiKey=86e9745df35749c2b909c52955f0a08e")
+            let date = new Date();
+            fetch("http://newsapi.org/v2/everything?q=bitcoin&from=${date}&sortBy=publishedAt&apiKey=86e9745df35749c2b909c52955f0a08e")
             .then(response => response.json())
             .then(data => {
                 console.log(data);
