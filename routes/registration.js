@@ -11,7 +11,6 @@ router.get("/registration", (req, res) => {
     let username = req.body.username;
     let password = req.body.password;
     let email = req.body.email;
-        console.log(req.body);
     //hash our password
 
     try {
@@ -23,7 +22,6 @@ router.get("/registration", (req, res) => {
         password: passwordEncrypted,
         roleID: 1
         });
-
         res.redirect("/login");
     } catch (error) {
         console.log(error);
