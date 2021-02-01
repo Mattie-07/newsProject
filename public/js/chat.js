@@ -4,7 +4,7 @@ const socket = io();
 let chatUsername = document.querySelector('#chat-username');
 let chatMessage = document.querySelector('#chat-message');
 
-// socket.on('connection', ()=>{
+socket.on('connect', ()=>{
 
     
     let chatForm = document.querySelector('form');
@@ -19,8 +19,8 @@ let chatMessage = document.querySelector('#chat-message');
         })
 
         chatMessage.value = '';
-        // chatMessage.focus();
-    })// end of event listner
+        chatMessage.focus();
+    })// end of event listener
 
     socket.on('updateMessages', (data)=>{
 
@@ -42,4 +42,4 @@ let chatMessage = document.querySelector('#chat-message');
     })
 
 
-// })
+})
