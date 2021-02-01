@@ -4,31 +4,30 @@ const db = require("../models");
 const bcrypt = require("bcryptjs");
 
 router.get("/registration", (req, res) => {
-  res.render("registration");
-});
-
-router.post("/registration", async (req, res) => {
-  let username = req.body.username;
-  let password = req.body.password;
-  let email = req.body.email;
-
-  //hash our password
-
-  try {
-    let passwordEncrypted = bcrypt.hashSync(password, 8);
-
-    //add logic for duplicate users
-    let insertResult = await db.users.create({
-      username: username,
-      email: email,
-      password: passwordEncrypted,
-      roleID: 1,
+    res.render("registration");
     });
 
-    res.redirect("/login");
-  } catch (error) {
-    res.send(`error: can't register this username`);
-  }
+    router.post("/registration", async (req, res) => {
+    let username = req.body.username;
+    let password = req.body.password;
+    let email = req.body.email;
+    //hash our password
+
+    try {
+        let passwordEncrypted = bcrypt.hashSync(password, 8);
+        let nameCheck = await db.users.get({userName})
+        //add logic for duplicate users
+        let insertResult = await db.users.create({
+        userName: username,
+        email: email,
+        password: passwordEncrypted,
+        roleID: 1
+        });
+        res.redirect("/login");
+    } catch (error) {
+        console.log(error);
+        res.send(`error: can't register this username`);
+    }
 });
 
 module.exports = router;

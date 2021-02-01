@@ -28,4 +28,7 @@ router.get('/error', (req, res)=>{
 //   res.redirect('/')
 // })
 
+
+//router.get('/logout', (req, res))
+
 module.exports = router;
