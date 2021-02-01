@@ -19,3 +19,13 @@ When creating new tables it is a two step process, first creating the models wit
 
 On line 18 of resgistraition.js
 Middleware calls inside of the DB are going to have an async call.
+
+if you run the command db:migrate:undo. it will undo only the last migration done. 
+
+    static associate(models) {
+        models.roles.hasMany(models.users, {foreignKey:'roleID'})
+
+             */
+    static associate(models) {
+      models.roles.belongsTo(models.roles, {foreignKey:"roleType"})
+    }
