@@ -34,7 +34,7 @@ io.on('connection', (socket)=>{
 //listening for messages from client
     socket.on('postMessage', (msg)=>{
 
-        console.log(msg);
+        // console.log(msg);
         //broadcast to all connected servers
         io.emit('updateMessages', msg)
     })

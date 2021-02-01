@@ -33,7 +33,7 @@ socket.on('connect', ()=>{
             newMessage.className = "bg-success chat-text";
         }
         else{
-            newMessage.className = "bg-info text-warning chat-text"
+            newMessage.className = "bg-secondary text-warning chat-text"
         }
 
         newMessage.innerHTML = `<strong>${data.username}</strong>: ${data.message}`;
