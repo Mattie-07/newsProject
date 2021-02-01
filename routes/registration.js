@@ -15,6 +15,7 @@ router.get("/registration", (req, res) => {
 
     try {
         let passwordEncrypted = bcrypt.hashSync(password, 8);
+        let nameCheck = await db.users.get({userName})
         //add logic for duplicate users
         let insertResult = await db.users.create({
         userName: username,
