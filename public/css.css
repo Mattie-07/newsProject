@@ -1,0 +1,52 @@
+body{
+    background-color: rgb(255, 255, 255);
+}
+
+.img-responsive{
+    height: 400px;
+}
+
+.navbar{
+    height: 60px;
+}
+
+
+.carousel {
+    position: relative;
+}
+
+.bd-example::after {
+    display: block;
+    clear: both;
+    content: "";
+}
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+
+/* element.style {
+} */
+.carousel-inner {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+/* user agent stylesheet */
+div {
+    display: block;
+}
+
+.w-100 {
+    width: 100%!important;
+}
+
+.d-block {
+    display: block!important;
+}
+img {
+    vertical-align: middle;
+    border-style: none;
+}
