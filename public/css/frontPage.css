@@ -19,3 +19,63 @@ footer{
 li{
     list-style-type: none;
 }
+
+header {
+    font-size: 2rem;
+    }
+    
+    header .jumbotron {
+    height: 40vh;
+    margin-bottom: 0;
+    background: url(../images/jumbotron.jpg) no-repeat 100% 5%;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-position-y: -220px;
+    }
+    .jumbotron2 {
+    height: 50vh;
+    margin-bottom: 0;
+    background: url(images/darkBlueGlobe.jpeg) no-repeat 100% 5%;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-attachment: fixed;
+    /* background-position-y: 50px; */
+    }
+    
+    /**  Navbar **/
+    
+    header .navbar {
+    margin-bottom: 0;
+    border-radius: 0;
+    font-family: "Roboto", sans-serif;
+    font-weight: 100;
+    }
+    
+    header .navbar-default {
+    border: none;
+    border-radius: 0;
+    padding: 10px 0;
+    }
+    
+    .navbar-inverse {
+    border: 0;
+    }
+    
+    
+    header .navbar-brand {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.3em;
+    font-weight: 300;
+    }
+    
+    /* header .navbar-inverse .navbar-brand {
+    color: white;
+    }
+    
+    header .navbar-inverse .navbar-nav>li>a {
+    color: rgb(255, 255, 255);
+    }  */

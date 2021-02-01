@@ -1,82 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-
-    <form class="search" action="">
-        <label for="">News</label>
-        <input class="input" type="text" /><br>
-        <input type="submit"/>
-    </form>
-
-
-    <div class="container">
-        <ul class="news-return"></ul>
-    </div>
-
-    <script>
-        const searchEngine = document.querySelector('.search');
-        const input = document.querySelector('.input');
-        const newsReturn = document.querySelector('.news-return');
-
-        searchEngine.addEventListener('submit', retrieve);
-
-        function retrieve(e){
-
-            if(input.value == ''){
-                alert('Input field is empty!')
-                return
-            }
-
-            newsReturn.innerHTML = '';
-
-            e.preventDefault()
-
-            const apiKey = `da6c1126097047e4a0ebac35a7b51878`
-            let topic = input.value;
-
-            let url = `http://newsapi.org/v2/everything?q=${topic}&apiKey=${apiKey}`
-
-            fetch(url).then((res)=>{
-                return res.json()
-                       //return response in JSON format
-            })
-            .then((data)=>{
-                console.log(data)
-                data.articles.forEach(article =>{
-                    let li = document.createElement('li');
-                    let a = document.createElement('a');
-                    a.setAttribute('href', data)
-                    a.setAttribute('target', '_blank');
-                    a.textContent = article.url;
-                    li.appendChild(a);
-                    newsReturn.appendChild(li);
-                })
-            }).catch((error)=>{
-                console.log(error)
-            });
-        }
-
-        console.log(topic);
-
-    </script>
-    
-</body>
-</html>
-
-
-
-
-
-
-
-
-
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -85,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-    <link rel="stylesheet" href="public\css\css.css">
+    <link rel="stylesheet" href="public/css/css.css">
 </head>
 <body>
     <header>
@@ -120,6 +41,16 @@
 
                     <article class="article">
                         <h1 class="article-title">Search News</h1>
+                        <form class="search" action="">
+                            <label for="">News</label>
+                            <input class="input" type="text" /><br>
+                            <input type="submit"/>
+                        </form>
+                    
+                    
+                        <div class="container">
+                            <ul class="news-return"></ul>
+                        </div>
                         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Explicabo quisquam velit excepturi. Ducimus expedita veniam consequuntur exercitationem amet cumque iusto et dolor sint, tempora distinctio officia, earum aliquam incidunt harum.</p>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. A, deleniti dolore. Ratione hic culpa molestiae repellendus itaque ipsa, dolorem cumque est eligendi iusto fuga vel beatae rem aspernatur, mollitia aliquid.</p>
                     </article><!--Slide placeholder-->
@@ -155,10 +86,56 @@
         </div>
     </div><!-- container -->
 
+    <script>
+        const searchEngine = document.querySelector('.search');
+        const input = document.querySelector('.input');
+        const newsReturn = document.querySelector('.news-return');
+
+        searchEngine.addEventListener('submit', retrieve);
+
+        function retrieve(e){
+
+            if(input.value == ''){
+                alert('Input field is empty!')
+                return
+            }
+
+            newsReturn.innerHTML = '';
+
+            e.preventDefault()
+
+            const apiKey = `da6c1126097047e4a0ebac35a7b51878`
+            let topic = input.value;
+
+            let urlToImage = `http://newsapi.org/v2/everything?q=${topic}&apiKey=${apiKey}`
+
+            fetch(urlToImage).then((res)=>{
+                return res.json()
+                       //return response in JSON format
+            })
+            .then((data)=>{
+                console.log(data)
+                data.articles.forEach(article =>{
+                    let li = document.createElement('li');
+                    let a = document.createElement('a');
+                    a.setAttribute('href', data)
+                    a.setAttribute('target', '_blank');
+                    a.textContent = article.urlToImage;  //what would i do instead of textContent??
+                    li.appendChild(a);
+                    newsReturn.appendChild(li);
+                })
+            }).catch((error)=>{
+                console.log(error)
+            });
+        }
+
+        console.log(topic);
+
+    </script>
 
 
-
-
+</body>
+</html>
 
 
 
