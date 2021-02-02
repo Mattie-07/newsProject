@@ -9,7 +9,8 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       userName: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        unique: true
       },
       password: {
         type: Sequelize.STRING
@@ -23,7 +24,7 @@ module.exports = {
       roleID: {
         type: Sequelize.INTEGER,
         references: {
-          model : 'roles',
+          model :'roles',
           key: 'id'
         }
       },

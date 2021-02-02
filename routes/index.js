@@ -21,11 +21,14 @@ router.get('/error', (req, res)=>{
 
 
 
-router.get('/logout', (req, res) => {
-  //session is cleared
-  req.logout();
+// router.get('/logout', (req, res) => {
+//   //session is cleared
+//   req.logout();
 
-  res.redirect('/')
-})
+//   res.redirect('/')
+// })
+
+
+//router.get('/logout', (req, res))
 
 module.exports = router;

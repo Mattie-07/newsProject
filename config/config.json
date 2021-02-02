@@ -4,6 +4,11 @@
     "password": "yv3Pmb3o8mLbOTu_DskeVVXgqwV6E2My",
     "database": "hzlyxpni",
     "host": "ziggy.db.elephantsql.com",
-    "dialect": "postgres"
+    "dialect": "postgres",
+    "pool":{
+      "max": 10,
+      "min": 0,
+      "idle": 5000
+}
   }
 }

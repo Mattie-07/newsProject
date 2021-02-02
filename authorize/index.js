@@ -1,4 +1,4 @@
-const { authorize } = require("passport");
+const auth = require("passport");
 
 let auth = (req, res, next) =>{
     if(req.isAuthenticated()){

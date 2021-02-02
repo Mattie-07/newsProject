@@ -50,9 +50,11 @@
         <script src="js/chat.js"></script>
 
         <script>
+
         var date = new Date ();
-        var api = "86e9745df35749c2b909c52955f0a08e"
+        var api = "7235e9c528744dd09cfafa0d2cc35723"
         fetch(`http://newsapi.org/v2/everything?q=bitcoin&from=${date}&sortBy=publishedAt&apiKey=${api}`)
+
             .then(response => response.json())
             .then(data => {
                 console.log(data);
