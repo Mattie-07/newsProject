@@ -152,6 +152,8 @@ body{
 /*------------------CHAT start ---------------------*/
 .container {
   padding: 16px;
+  background-color: #d1e8e2;
+
 }
 .chat{
   display: flex;
@@ -161,11 +163,9 @@ body{
   height: 200px;
   background-color: white;
   overflow-y: scroll;
+  border: 1px solid #888;
 }
-.chat-display{
-  display: flex;
-  align-self: flex-end;
-}
+
 
 /* --------------------end of chat--------------- */
 
