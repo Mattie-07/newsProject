@@ -6,58 +6,64 @@
 
 
 //universal--------------------------
-const api = `1a0dab219e094582b53772f241682362`;
-const api2 = `c0f7f211d57d4822b8ee00ecd0307d1d`;
+const api = `da6c1126097047e4a0ebac35a7b51878`;
+const api2 = `da6c1126097047e4a0ebac35a7b51878`;
 const date = new Date(); //goes for bit coin below....
 
 // ------------------search API --------------------------------------------------
-const searchEngine = document.querySelector('.search');
-const input = document.querySelector('.input');
-const newsReturn = document.querySelector('.news-return');
-searchEngine.addEventListener('submit', retrieve);
+// const searchEngine = document.querySelector('.search');
+// const input = document.querySelector('.input');
+// const newsReturn = document.querySelector('.news-return');
+// searchEngine.addEventListener('submit', retrieve);
 
 
-function retrieve(e){
-    if(input.value == ''){
-        alert('Input field is empty!')
-        return
-    }
+// function retrieve(e){
+//     if(input.value == ''){
+//         alert('Input field is empty!')
+//         return
+//     }
 
-    newsReturn.innerHTML = '';
-    e.preventDefault();
-    let topic = input.value;
+//     newsReturn.innerHTML = '';
+//     e.preventDefault();
+//     let topic = input.value;
 
-    let urlToImage = `http://newsapi.org/v2/everything?q=${topic}&apiKey=${api}`
-    //ADD AUTHOR/URL----------------********
-    fetch(urlToImage).then((res)=>{
-        return res.json()
-               //return response in JSON format
-    })
-    .then((data)=>{
-        console.log(data)
-        data.articles.forEach(article =>{
-            let li = document.createElement('li');
-            let a = document.createElement('a');
-            a.setAttribute('href', data)
-            a.setAttribute('target', '_blank');
-            a.textContent = article.urlToImage;  //what would i do instead of textContent??
-            li.appendChild(a);
-            newsReturn.appendChild(li);
-        })
-    }).catch((error)=>{
-        console.log(error)
-    });
-}
+//     let urlToImage = `http://newsapi.org/v2/everything?q=${topic}&apiKey=${api}`
+//     //ADD AUTHOR/URL----------------********
+//     fetch(urlToImage).then((res)=>{
+//         return res.json()
+//                //return response in JSON format
+//     })
+//     .then((data)=>{
+//         console.log(data)
+//         data.articles.forEach(article =>{
+//             let li = document.createElement('li');
+//             let a = document.createElement('a');
+//             a.setAttribute('href', data)
+//             a.setAttribute('target', '_blank');
+//             a.textContent = article.urlToImage;  //what would i do instead of textContent??
+//             li.appendChild(a);
+//             newsReturn.appendChild(li);
+//         })
+//     }).catch((error)=>{
+//         console.log(error)
+//     });
+// }
 //----------Top Headlines-----------------------------------
-let title = fetch(`https://newsapi.org/v2/top-headlines?country=us&apiKey=${api}`);
-let img = fetch(`https://newsapi.org/v2/top-headlines?country=us&apiKey=${api2}`);
+let title = "";
+title = fetch(`http://newsapi.org/v2/everything?q=bitcoin&from=${date}&sortBy=publishedAt&apiKey=${api}`);
+let img 
+img = fetch(`https://newsapi.org/v2/top-headlines?country&from=${date}=us&apiKey=${api2}`);
     Promise.all([title], [img]) //these are responses
     .then( files =>{
         files.forEach(file=>{
-            process (file.json() );
+
+            process (file.json());
+            console.log(file)
+
         })
-        .catch(err=>{
-            return('error')
+
+        .catch(error=>{
+            return(error)
         });
         let process = (prom) =>{
             prom.then(data=>{  //wait until it is resolved
@@ -146,12 +152,12 @@ let img = fetch(`https://newsapi.org/v2/top-headlines?country=us&apiKey=${api2}`
 
 //router -------------------------------------
 
-router.get('/' , (req, res) =>{
-    res.render('index2')
-})
+// router.get('/' , (req, res) =>{
+//     res.render('index2')
+// })
 
 
 
 
 
-module.exports = router;
+// module.exports = router;
