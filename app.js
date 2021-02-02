@@ -20,8 +20,6 @@ app.use(require('./routes/error'));
 app.use(require('./routes/chat'));
 
 //access to the public folder
-
-
 let server = app.listen(3000, () => {
     console.log(`listening on port 3000`);
 });
