@@ -56,8 +56,10 @@ img = fetch(`https://newsapi.org/v2/top-headlines?country&from=${date}=us&apiKey
     Promise.all([title], [img]) //these are responses
     .then( files =>{
         files.forEach(file=>{
+
             process (file.json());
             console.log(file)
+
         })
 
         .catch(error=>{
