@@ -7,7 +7,6 @@ body{
   height: 50px;
 }
 
-
 /* ----------slideshow---------- */
 * {box-sizing:border-box}
 /*carousel header*/
@@ -19,10 +18,11 @@ body{
   border: 3px solid rgb(16, 241, 117);
 
 }
-
+/* 
 .container{
-border-radius: 10px;
-}
+  border: 3px solid rgb(224, 20, 20);
+
+} */
 .col-sm-9{
   border:10px solid saddlebrown
 }
@@ -150,9 +150,22 @@ border-radius: 10px;
 
 
 /*------------------CHAT start ---------------------*/
-
-
-
+.container {
+  padding: 16px;
+}
+.chat{
+  display: flex;
+  flex-direction: column;
+}
+.chat-container{
+  height: 200px;
+  background-color: white;
+  overflow-y: scroll;
+}
+.chat-display{
+  display: flex;
+  align-self: flex-end;
+}
 
 /* --------------------end of chat--------------- */
 
@@ -233,14 +246,7 @@ img.avatar {
   border-radius: 50%;
 }
 
-.container {
-  padding: 16px;
-}
-.chat-container{
-  height: 200px;
-  background-color: white;
-  overflow-y: scroll;
-}
+
 span.psw {
   float: right;
   padding-top: 16px;
