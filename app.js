@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const helmet = require('helmet');
+const axios = require('axios');
 
 
 
@@ -33,6 +34,7 @@ app.use(passport.session());
 app.use(require('./routes/index'));
 app.use(require('./routes/registration'));
 app.use(require('./routes/login'));
+app.use(require('./PRACTICE/index2'));
 
 //access to the public folder
 

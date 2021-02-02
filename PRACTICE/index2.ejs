@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <%- include('partials/template/headDefault.ejs')  %>
+    </head>
+    <body>
+
+        <div class="container">
+            
+        </div>
+
+        <%- include('partials/template/header.ejs')  %>
+        <h1></h1>
+        <img src="" class="img-responsive">    
+
+        <%- include('partials/template/jsdefault.ejs')  %>
+
+        <script>
+//Bit coin fetch-----------------------------------------------------------------
+        const date = new Date ();
+        const api = "7235e9c528744dd09cfafa0d2cc35723"
+
+
+        fetch(`http://newsapi.org/v2/everything?q=bitcoin&from=${date}&sortBy=publishedAt&apiKey=${api}`)
+
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+                news = data.articles[0].title;
+                image = data.articles[0].urlToImage;
+                console.log(news)
+
+                let h1 = document.querySelector('h1');
+                h1.textContent = `The title is: ${news}`;
+                let img = document.querySelector('img');
+                img.src = image;
+            })
+            .catch((error)=>{
+                console.log(error)
+            })
+
+            let topic = input.value;
+
+        let urlToImage = `http://newsapi.org/v2/everything?q=${topic}&apiKey=${apiKey}`
+
+        </script>
+
+        <%- include('partials/template/jsdefault.ejs')  %>
+    </body>
+</html>
