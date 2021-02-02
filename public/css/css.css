@@ -18,8 +18,8 @@ body{
 
 
 }
-
-/* .container{
+/* 
+.container{
 
 
 } */
@@ -143,6 +143,21 @@ body{
 
 
 /*------------------CHAT start ---------------------*/
+.container {
+  padding: 16px;
+  background-color: #d1e8e2;
+
+}
+.chat{
+  display: flex;
+  flex-direction: column;
+}
+.chat-container{
+  height: 200px;
+  background-color: white;
+  overflow-y: scroll;
+  border: 1px solid #888;
+}
 
 
 /* --------------------end of chat--------------- */
@@ -224,14 +239,7 @@ img.avatar {
   border-radius: 50%;
 }
 
-.container {
-  padding: 16px;
-}
-.chat-container{
-  height: 200px;
-  background-color: white;
-  overflow-y: scroll;
-}
+
 span.psw {
   float: right;
   padding-top: 16px;
