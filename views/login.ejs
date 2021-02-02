@@ -9,40 +9,33 @@
 
 
 
-        <!-- <button id="login" style="width:auto;">Login</button> -->
+        <button id="login" style="width:auto;">Login</button>
 
         <div id="id01" class="modal">
-          
-          <form class="modal-content animate" action="/action_page.php" method="post">
+          <form class="modal-content animate" action="/action_page.php">
             <div class="imgcontainer">
-              
             </div>
-        
             <div class="container">
               <label for="uname"><b>Username</b></label>
               <input type="text" placeholder="Enter Username" name="uname" required>
-        
               <label for="psw"><b>Password</b></label>
               <input type="password" placeholder="Enter Password" name="psw" required>
-                
               <button type="submit">Login</button>
               <label>
                 <input type="checkbox" checked="checked" name="remember"> Remember me
               </label>
             </div>
-        
             <div class="container" style="background-color:#f1f1f1">
-              
             </div>
           </form>
         </div>
         
         <script>
         // Get the modal
-        var modal = document.getElementById('login');
-        modal.addEventListener('click', ()=>{
+        var login = document.getElementById('login');
+        login.addEventListener('click', ()=>{
           if (event.target == modal) {
-                modal.style.display = "none";
+                modal.style.display = "block";
             }
             else{
               modal.style.display='block';
