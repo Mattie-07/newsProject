@@ -7,16 +7,53 @@
         <%- include('partials/template/header.ejs')  %>
 
         <%- include('partials/template/jsdefault.ejs')  %>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
         <h1>Registration</h1>
-        <form action="/registration" method="POST">
+        <!-- <form action="/registration" method="POST">
     
             username: <input type="text" name="username"><br>
             password: <input type="password" name="password"><br>
             email: <input type="text" name="email">
     
             <input type="submit">
+        </form> -->
+
+        
+        <!-- <button id="login" style="width:auto;">Login</button> -->
+
+        <!-- <div id="id01" class="modal">
+            <div class="imgcontainer">
+            <span onclick="document.getElementById('id01').style.display='none'"></span>
+        </div> -->
+            <form class="modal-content animate" action="post" method="post">
+        
+        
+            <div class="container">
+                <label for="uname"><b>Username</b></label><button onclick="closeDialog()">Close dialog</button>
+                <input type="text" placeholder="Enter Your Name" name="userName" required>
+        
+                <label for="psw"><b>Password</b></label>
+                <input type="password" placeholder="Enter Your Password" name="password" required>
+
+                <label ><b>Email</b></label>
+                <input type="email" placeholder="Enter Your Email" name="email" required>
+                
+                <button type="submit">Submit</button>
+            
+            </div>
         </form>
+        </div>
+        
+        <script>
+        // Get the modal
+      
+
+        
+        // When the user clicks anywhere outside of the modal, close it
+        
+        
+        </script>
 
     </body>
 </html>

@@ -49,6 +49,6 @@ if you run the command db:migrate:undo. it will undo only the last migration don
     github- 
 
     * kim- 
-    email-
-    linkedin- 
-    github- 
+    email- kimrlong09@gmail.com
+    linkedin- https://www.linkedin.com/in/kimrlong/
+    github- https://github.com/KimrLong
