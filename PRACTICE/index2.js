@@ -1,19 +1,22 @@
-const express = require("express");
-const router = express.Router();
-const axios = require('axios');
-const authReq = require('../auth');
+// const express = require("express");
+// const router = express.Router();
+// const axios = require('axios');
+// const authReq = require('../auth');
 
 
 
 //universal--------------------------
-const api = `7235e9c528744dd09cfafa0d2cc35723`;
+const api = `1a0dab219e094582b53772f241682362`;
+const api2 = `c0f7f211d57d4822b8ee00ecd0307d1d`;
 const date = new Date(); //goes for bit coin below....
+
+// ------------------search API --------------------------------------------------
 const searchEngine = document.querySelector('.search');
 const input = document.querySelector('.input');
 const newsReturn = document.querySelector('.news-return');
 searchEngine.addEventListener('submit', retrieve);
 
-// ------------------search API --------------------------------------------------
+
 function retrieve(e){
     if(input.value == ''){
         alert('Input field is empty!')
@@ -46,10 +49,29 @@ function retrieve(e){
     });
 }
 //----------Top Headlines-----------------------------------
-let headlines = `https://newsapi.org/v2/top-headlines?country=us&apiKey=${api}`
-fetch(url, urlToImage).then((res)=>{
-    return res.json()
-})
+let title = fetch(`https://newsapi.org/v2/top-headlines?country=us&apiKey=${api}`);
+let img = fetch(`https://newsapi.org/v2/top-headlines?country=us&apiKey=${api2}`);
+    Promise.all([title], [img]) //these are responses
+    .then( files =>{
+        files.forEach(file=>{
+            process (file.json() );
+        })
+        .catch(err=>{
+            return('error')
+        });
+        let process = (prom) =>{
+            prom.then(data=>{  //wait until it is resolved
+                let p = document.createElement('p');
+                p.textContent = data.articles.join(",");
+                document.getElementById('output').appendChild(p);
+            })
+        }
+    })
+
+    //this is for 
+    // <div id = "output">
+    // <p></p></div>
+
 
 
     
@@ -64,9 +86,9 @@ fetch(url, urlToImage).then((res)=>{
                     image = data.articles[0].urlToImage;
                     console.log(news)
     
-                    let h1 = document.querySelector('h1');
+                    let h1 = document.querySelector('h1'); ///created in H1 tag
                     h1.textContent = `The title is: ${news}`;
-                    let img = document.querySelector('img');
+                    let img = document.querySelector('img'); //created in img src tag
                     img.src = image;
                 })
                 .catch((error)=>{
