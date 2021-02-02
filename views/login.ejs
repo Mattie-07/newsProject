@@ -9,7 +9,7 @@
 
 
 
-        <button id="login" style="width:auto;">Login</button>
+        <!-- <button id="login" style="width:auto;">Login</button> -->
 
         <div id="id01" class="modal">
           
@@ -42,11 +42,11 @@
         var modal = document.getElementById('login');
         modal.addEventListener('click', ()=>{
           if (event.target == modal) {
-                modal.style.display = "block";
+                modal.style.display = "none";
             }
-            // else{
-            //   modal.style.display='block';
-            // }
+            else{
+              modal.style.display='block';
+            }
 
         })
         // When the user clicks anywhere outside of the modal, close it
