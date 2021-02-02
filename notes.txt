@@ -33,9 +33,9 @@ if you run the command db:migrate:undo. it will undo only the last migration don
 /////////////////////////////////////////////////////////////////////////////////
 
     *kanny- 
-    email-
-    linkedin- 
-    github- 
+    email-  kanny.ghafour87@gmail.com
+    linkedin- https://www.linkedin.com/in/kannymohamad/
+    github-  https://github.com/kannyg87
 
 
     *matt c-
