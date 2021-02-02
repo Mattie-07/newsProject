@@ -147,6 +147,14 @@ body{
 }
 
 /* --------------------ends of slideshow--------------- */
+
+
+/*------------------CHAT start ---------------------*/
+
+
+/* --------------------end of chat--------------- */
+
+
 /*------------------SIDE BAR START ---------------------*/
 
 .sidebar-title {
@@ -226,7 +234,11 @@ img.avatar {
 .container {
   padding: 16px;
 }
-
+.chat-container{
+  height: 200px;
+  background-color: white;
+  overflow-y: scroll;
+}
 span.psw {
   float: right;
   padding-top: 16px;

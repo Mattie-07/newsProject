@@ -5,15 +5,49 @@
     </head>
     <body>
 
-        <div class="container">
-            
-        </div>
-
         <%- include('partials/template/header.ejs')  %>
-        <h1></h1>
-        <img src="" class="img-responsive">    
-
+ 
         <%- include('partials/template/jsdefault.ejs')  %>
+        <div class="container bg-primary">
+            <div class="chat-page">
+                <div class="msg-inbox">
+                    <div class="chats">
+                    <form name="chatForm" class="form-horizontal chat-form">
+                        <div class="form-group">
+                            <label for="chat-username" class="col-sm-2 control-label text-white">Name</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="chat-username" required
+                                    placeholder="Enter your name">
+                            </div><!-- col-sm-10 -->
+                        </div><!-- form-group -->
+                        <div class="form-group">
+                            <label for="chat-message" class="col-sm-2 control-label text-white">Message</label>
+                            <div class="col-sm-10">
+                                <div class="input-group">
+                                    <input type="text" placeholder="Enter a message, then press enter"
+                                        class="form-control" id="chat-message" rows="4" autocomplete="off" required>
+                                    <span class="input-group-btn">
+                                        <button id="chat-submit" class="btn btn-info" type="submit">Chat</button>
+                                    </span>
+                                </div><!-- input-group -->
+                            </div><!-- col-sm-10 -->
+                        </div><!-- form-group -->
+                    </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container chat-container">
+            <div class="col-sm-10 panel-body chat-display">
+                <p class="text-muted chat-text "></p>
+            </div><!-- panel-body -->
+        </div><!-- panel-default -->
+
+        <h1></h1>
+        <img src="" class="img-responsive">   
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.0.5/socket.io.js"></script>
+        <script src="js/chat.js"></script>
 
         <script>
 
@@ -38,7 +72,6 @@
             })
 
         </script>
-
         <%- include('partials/template/jsdefault.ejs')  %>
     </body>
 </html>

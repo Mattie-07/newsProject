@@ -30,10 +30,10 @@ socket.on('connect', ()=>{
         let newMessage = document.createElement('p');
 
         if(chatUsername.value === data.username){
-            newMessage.className = "bg-success chat-text";
+            newMessage.className = "chat-text text-primary";
         }
         else{
-            newMessage.className = "bg-info text-warning chat-text"
+            newMessage.className = "text-dark chat-text"
         }
 
         newMessage.innerHTML = `<strong>${data.username}</strong>: ${data.message}`;
