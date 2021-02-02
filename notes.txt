@@ -29,3 +29,26 @@ if you run the command db:migrate:undo. it will undo only the last migration don
     static associate(models) {
       models.roles.belongsTo(models.roles, {foreignKey:"roleType"})
     }
+
+/////////////////////////////////////////////////////////////////////////////////
+
+    *kanny- 
+    email-
+    linkedin- 
+    github- 
+
+
+    *matt c-
+    email-
+    linkedin- 
+    github- 
+
+    *matt r- 
+    email- 
+    linkedin- 
+    github- 
+
+    * kim- 
+    email-
+    linkedin- 
+    github- 
