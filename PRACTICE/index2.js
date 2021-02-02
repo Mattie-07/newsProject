@@ -73,7 +73,7 @@ fetch(url, urlToImage).then((res)=>{
                     console.log(error)
                 })
                 //---------------------------------------------
-                //Kanny's code below ------------------------------------
+//Kanny's code below ------------------------------------
                 .then(response => response.json())
                 .then(data => {
                     console.log(data);
