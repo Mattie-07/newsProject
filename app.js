@@ -22,7 +22,7 @@ app.use(require('./routes/aboutUs'));
 
 
 //access to the public folder
-let server = app.listen(4005, () => {
+let server = app.listen(3005, () => {
     console.log(`listening on port 3000`);
 });
 
