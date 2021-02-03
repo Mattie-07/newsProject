@@ -60,20 +60,20 @@ header .jumbotron {
   border:10px dotted rgb(92, 53, 143)
 
 }
-#img1,#img2, #img3, #img4, #img5, #img6{
+/* #img1,#img2, #img3, #img4, #img5, #img6{
   overflow: hidden;
   height: 300px;
   width:100%;
   max-width: none;
   /* vertical-align: middle; */
-  display: flex;
-  justify-content: center;
+  /* display: flex;
+  justify-content: center; */
   /* margin-top: 50px;
-  margin-bottom: 50px; */
+  margin-bottom: 50px; */ */
 
 
 
-}
+/* } */
 
 /* Next & previous buttons */
 .prev, .next {
