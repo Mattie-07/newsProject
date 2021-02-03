@@ -20,7 +20,6 @@ router.get('/error', (req, res)=>{
 })
 
 
-
 // const searchEngine = document.querySelector('.search');
 // const input = document.querySelector('.input');
 // const newsReturn = document.querySelector('.news-return');
