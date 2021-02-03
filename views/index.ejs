@@ -7,10 +7,55 @@
     </style>
     <body>
         <%- include('partials/template/header.ejs')  %>
+
+        
+        <!-- Chat popup -->
+        <button class="open-button" onclick="openForm()">Chat</button>
+        <div class="chat-popup" id="myForm">
+            <form class="form-container">
+                <label for="chat-username" class="col control-label text-white">Username</label>
+                <div class="col">
+                    <input type="text" class="form-control" id="chat-username" required
+                        placeholder="Enter your name">
+                </div><!-- col-->
+                <label for="chat-message" class="col control-label text-white">Message</label>
+                <div class="col">
+                    <div class="input-group">
+                        <input type="text" placeholder="Enter message here"
+                            class="form-control" id="chat-message" rows="4" autocomplete="off" required>
+                        <span class="input-group-btn">
+                            <button id="chat-submit" class="btn btn-info" type="submit"><i class="fa fa-paper-plane"></i></button>
+                        </span>
+                    </div><!-- input-group -->
+                </div><!-- col -->
+                <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+                <div class="chat-container">
+                    <div class="col-sm-10 panel-body chat-display">
+                        <p class="text-muted chat-text"></p>
+                    </div><!-- panel-body -->
+                </div><!-- panel-default -->  
+            </form>
+        </div>
+
+        <!-- chat open/close button -->
+        <script>
+        function openForm() {
+          document.getElementById("myForm").style.display = "block";
+        }
+        function closeForm() {
+          document.getElementById("myForm").style.display = "none";
+        }
+        </script>
+
+        <!-- chat js stuff -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.0.5/socket.io.js"></script>
+        <script src="js/chat.js"></script>
+        
         <div class="container">
             <h2 class="mt-5">Today's Top Headlines</h2>
             <div class="scrolling-wrapper row flex-row flex-nowrap mt-4 pb-4 pt-2" id="card-container">
             </div>
+
 
             <h2 class="mt-5">What's going on in the technology industry</h2>
             <div class="scrolling-wrapper row flex-row flex-nowrap mt-4 pb-4 pt-2" id="tech-container">
@@ -20,6 +65,7 @@
             <h2 class="mt-5">Your Health. Today.</h2>
             <div class="scrolling-wrapper row flex-row flex-nowrap mt-4 pb-4 pt-2" id="health-container">
             </div>
+
             <h2 class="mt-5">Your own new preference</h2>
             <div class="scrolling-wrapper row flex-row flex-nowrap mt-4 pb-4 pt-2" id="yourNews">
             </div>
@@ -42,6 +88,7 @@
                 </article>
             </div>
         </div>
+
         <aside class="row">
             <div class="chat">
                 <div class="container col-6">
@@ -82,6 +129,7 @@
 
 
 
+
         <script>
         const searchEngine = document.querySelector('.search');
         const input = document.querySelector('.input');
@@ -89,7 +137,9 @@
         searchEngine.addEventListener('submit', retrieve);
 
         var date = new Date ();
-        var api = "1a0dab219e094582b53772f241682362"
+       
+        var api = "713c8aaef64445869dfa951229e58456"
+
         fetch(`http://newsapi.org/v2/top-headlines?country=us&from=${date}&sortBy=publishedAt&apiKey=${api}`)
             .then(response => response.json())
             .then(data => {
@@ -103,13 +153,13 @@
                     let newCard = document.createElement('div')
                     newCard.setAttribute("class", "col-5")
                     newCard.innerHTML = `           
-                            <div class="card" style="width: 18rem;">
+                            <div class="card" style="width: 25rem;">
                                 <img class="card-img-top" src="${image}" id="img" alt="Card image cap">
                                 <div class="card-body">
                                     <h5 class="card-title">${news}</h5>
                                     <p class="card-text">${description}</p>
                                     <a href="${urlLink}" class="btn btn-primary" id='readArticle'>See The Article!</a>
-                                    <a href="#" class="btn btn-primary">Save</a>
+                                    <a href="#" class="btn">Save</a>
 
                                 </div>
                             </div>`
