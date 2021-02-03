@@ -21,11 +21,11 @@ router.get('/error', (req, res)=>{
 
 
 // ------------------search API --------------------------------------------------
-const searchEngine = document.querySelector('.search');
-const input = document.querySelector('.input');
-const newsReturn = document.querySelector('.news-return');
+// const searchEngine = document.querySelector('.search');
+// const input = document.querySelector('.input');
+// const newsReturn = document.querySelector('.news-return');
 
-searchEngine.addEventListener('submit', retrieve);
+// searchEngine.addEventListener('submit', retrieve);
 
 function retrieve(e){
 
@@ -63,7 +63,7 @@ function retrieve(e){
     });
 }
 
-console.log(topic);
+// console.log(topic);
 
 // router.get('/logout', (req, res) => {
 //   //session is cleared
