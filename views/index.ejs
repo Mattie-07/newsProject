@@ -44,35 +44,27 @@
         </div>
 
 
-        <aside class="row">
-            <div class="chat">
-                <div class="container col-6">
-                    <form name="chatForm" class="form-horizontal chat-form">
-                        <label for="chat-username" class="col-sm-2 control-label text-dark">Username</label>
-                        <div class="col">
-                            <input type="text" class="form-control" id="chat-username" required
-                                placeholder="Enter your name">
-                        </div><!-- col-->
-                        <label for="chat-message" class="col-sm-2 control-label text-dark">Message</label>
-                        <div class="col">
-                            <div class="input-group">
-                                <input type="text" placeholder="Enter a message, then press enter"
-                                    class="form-control" id="chat-message" rows="4" autocomplete="off" required>
-                                <span class="input-group-btn">
-                                    <button id="chat-submit" class="btn btn-info" type="submit"><i class="fa fa-paper-plane fa-2x"></i></button>
-                                </span>
-                            </div><!-- input-group -->
-                        </div><!-- col -->
-                    </form>
-                </div>
+        <div class="container">
+            <div class="container">
+                <form name="chatForm" class="form-horizontal chat-form">
+                    <label for="chat-username" class="col control-label text-dark">Username</label>
+                    <div class="col">
+                        <input type="text" class="form-control" id="chat-username" required
+                            placeholder="Enter your name">
+                    </div><!-- col-->
+                    <label for="chat-message" class="col control-label text-dark">Message</label>
+                    <div class="col">
+                        <div class="input-group">
+                            <input type="text" placeholder="Enter a message, then press enter"
+                                class="form-control" id="chat-message" rows="4" autocomplete="off" required>
+                            <span class="input-group-btn">
+                                <button id="chat-submit" class="btn btn-info" type="submit"><i class="fa fa-paper-plane fa-x"></i></button>
+                            </span>
+                        </div><!-- input-group -->
+                    </div><!-- col -->
+                </form>
             </div>
-        </aside>
-                <div class="container chat-container col-6">
-                    <div class="col-sm-10 panel-body chat-display">
-                        <p class="text-muted chat-text"></p>
-                    </div><!-- panel-body -->
-                </div><!-- panel-default -->
-            </div>
+
         
     </div><!-- panel-default -->
     <div class="row pt-5">  
@@ -81,6 +73,14 @@
         <!-- <h1></h1>
         <img src="" class="img-responsive">    -->
         <script src="js/search.js"></script>
+
+            <div class="container chat-container">
+                <div class="col-sm-10 panel-body chat-display">
+                    <p class="text-muted chat-text"></p>
+                </div><!-- panel-body -->
+            </div><!-- panel-default -->
+        </div>
+
         <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.0.5/socket.io.js"></script>
         <script src="js/chat.js"></script>
 
@@ -96,6 +96,7 @@
                 console.log(data);
                 for(var x = 0; x < 5 ; x++){
                     let news = data.articles[x].title;
+                    let description = data.articles[x].description;
                     let image = data.articles[x].urlToImage;
                     let urlLink = data.articles[x].url
                     let cards = document.querySelector("#card-container");
@@ -106,6 +107,7 @@
                                 <img class="card-img-top" src="${image}" id="img" alt="Card image cap">
                                 <div class="card-body">
                                     <h5 class="card-title">${news}</h5>
+                                    <p class="card-text">${description}</p>
                                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                                     <a href="${urlLink}" class="btn btn-primary" id='readArticle'>See The Article!</a>
                                     <a href="#" class="btn btn-primary">Save</a>
@@ -126,9 +128,8 @@
                 console.log(data);
                 for(var x = 0; x < 5 ; x++){
                     let news = data.articles[x].title;
-
+                    let description = data.articles[x].description;
                     let image = data.articles[x].urlToImage;
-
                     let urlLink = data.articles[x].url
                     let cards = document.querySelector("#tech-container");
                     let newCard = document.createElement('div')
@@ -138,7 +139,7 @@
                                 <img class="card-img-top" src="${image}" id="img" alt="Card image cap">
                                 <div class="card-body">
                                     <h5 class="card-title">${news}</h5>
-                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    <p class="card-text">${description}</p>
                                     <a href="${urlLink}" class="btn btn-primary" id='readArticle'>See The Article!</a>
                                     <a href="#" class="btn btn-primary">Save</a>
 
@@ -158,9 +159,8 @@
                 console.log(data);
                 for(var x = 0; x < 5 ; x++){
                     let news = data.articles[x].title;
-
+                    let description = data.articles[x].description;
                     let image = data.articles[x].urlToImage;
-
                     let urlLink = data.articles[x].url
                     let cards = document.querySelector("#health-container");
                     let newCard = document.createElement('div')
@@ -170,6 +170,7 @@
                                 <img class="card-img-top" src="${image}" id="img" alt="Card image cap">
                                 <div class="card-body">
                                     <h5 class="card-title">${news}</h5>
+                                    <p class="card-text">${description}</p>
                                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                                     <a href="${urlLink}" class="btn btn-primary" id='readArticle'>See The Article!</a>
                                     <a href="#" class="btn btn-primary">Save</a>
