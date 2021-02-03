@@ -7,6 +7,7 @@
     </style>
     <body>
         <%- include('partials/template/header.ejs')  %>
+
         
         <!-- Chat popup -->
         <button class="open-button" onclick="openForm()">Chat</button>
@@ -67,7 +68,7 @@
 <!-- scroll cards  -->
             <h2 class="mt-5">Your Health. Today.</h2>
             <div class="scrolling-wrapper row flex-row flex-nowrap mt-4 pb-4 pt-2" id="health-container">
-
+            </div>
             <div class="row" id="article">
             <div class="col-10">
                 <article class="article">
@@ -91,7 +92,7 @@
 
         <script>
         var date = new Date ();
-        var api = "c0f7f211d57d4822b8ee00ecd0307d1d"
+        var api = "713c8aaef64445869dfa951229e58456"
         fetch(`http://newsapi.org/v2/top-headlines?country=us&from=${date}&sortBy=publishedAt&apiKey=${api}`)
             .then(response => response.json())
             .then(data => {
@@ -105,14 +106,14 @@
                     let newCard = document.createElement('div')
                     newCard.setAttribute("class", "col-5")
                     newCard.innerHTML = `           
-                            <div class="card" style="width: 18rem;">
+                            <div class="card" style="width: 25rem;">
                                 <img class="card-img-top" src="${image}" id="img" alt="Card image cap">
                                 <div class="card-body">
                                     <h5 class="card-title">${news}</h5>
                                     <p class="card-text">${description}</p>
-                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    <p class="card-text"></p>
                                     <a href="${urlLink}" class="btn btn-primary" id='readArticle'>See The Article!</a>
-                                    <a href="#" class="btn btn-primary">Save</a>
+                                    <a href="#" class="btn">Save</a>
 
                                 </div>
                             </div>`
@@ -173,7 +174,7 @@
                                 <div class="card-body">
                                     <h5 class="card-title">${news}</h5>
                                     <p class="card-text">${description}</p>
-                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    <p class="card-text"></p>
                                     <a href="${urlLink}" class="btn btn-primary" id='readArticle'>See The Article!</a>
                                     <a href="#" class="btn btn-primary">Save</a>
                                 </div>

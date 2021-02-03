@@ -19,8 +19,14 @@ body{
 
 
 }
-.card{
+.card-container{
   display: flex;
+  width: 25rem;
+}
+.btn{
+  background-color: #D1E8E2;
+  color:#2C3531
+
 }
 .mt-5{
 
@@ -108,7 +114,7 @@ header .navbar {
   /* display: flex;
   justify-content: center; */
   /* margin-top: 50px;
-  margin-bottom: 50px; */ */
+  margin-bottom: 50px; */ 
 
 
 

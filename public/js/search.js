@@ -16,7 +16,7 @@ function retrieve(e){
 
     e.preventDefault()
 
-    const apiKey = `7235e9c528744dd09cfafa0d2cc35723`
+    const apiKey = `c0f7f211d57d4822b8ee00ecd0307d1d`
     let topic = input.value;
 
     let url = `http://newsapi.org/v2/everything?q=${topic}&apiKey=${apiKey}`
