@@ -43,7 +43,7 @@
 
         <script>
         var date = new Date ();
-        var api = "f11810e069c8494e8039180140b7cada"
+        var api = "c0f7f211d57d4822b8ee00ecd0307d1d"
         fetch(`http://newsapi.org/v2/top-headlines?country=us&from=${date}&sortBy=publishedAt&apiKey=${api}`)
             .then(response => response.json())
             .then(data => {
