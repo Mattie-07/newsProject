@@ -11,8 +11,40 @@
         <%- include('partials/template/header.ejs')  %>
 
 
-<<<<<<< HEAD
-<div class="container col-lg-offset-6">
+        <div class="container">
+            <h2 class="mt-5">Today's Top Headlines</h2>
+            <div class="scrolling-wrapper row flex-row flex-nowrap mt-4 pb-4 pt-2" id="card-container">
+            </div>
+            <h2 class="mt-5">What's going on in the technology industry</h2>
+            <div class="scrolling-wrapper row flex-row flex-nowrap mt-4 pb-4 pt-2" id="tech-container">
+            </div>
+<!-- scroll cards  -->
+            <h2 class="mt-5">Your Health. Today.</h2>
+            <div class="scrolling-wrapper row flex-row flex-nowrap mt-4 pb-4 pt-2" id="health-container">
+
+            </div>
+            <div class="row" id="article">
+            <div class="col-10">
+                <article class="article">
+                    <h1 class="article-title">Search News</h1>
+                    <form class="search" action="">
+                        <label for="">News</label>
+                        <input class="input" type="text" /><br>
+                        <input type="submit"/>
+                    </form>
+                
+                
+                    <div class="container" id="news-return">
+                        <ul class="news-return"></ul>
+                    </div>
+                    <p></p>
+                    <p></p>
+                </article>
+            </div>
+        </div>
+
+
+        <div class="container">
             <div class="container">
                 <form name="chatForm" class="form-horizontal chat-form">
                     <label for="chat-username" class="col control-label text-dark">Username</label>
@@ -37,14 +69,12 @@
                     <p class="text-muted chat-text"></p>
                 </div><!-- panel-body -->
             </div><!-- panel-default -->
-</div>
-    <div class="row pt-5">  
-        <div class="jumbotron d-none d-lg-block width-100" style="height:200px;  background-size: 100%; font-size: 80px; color: rgb(255, 255, 255)">
-    </div>
-        <!-- <h1></h1>
-        <img src="" class="img-responsive">    -->
+        </div>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.0.5/socket.io.js"></script>
         <script src="js/chat.js"></script>
+
+
+
 
         <script>
         var date = new Date ();
@@ -147,7 +177,6 @@
             })
 
         </script>
->>>>>>> main
         <%- include('partials/template/jsdefault.ejs')  %>
 
     </body>
