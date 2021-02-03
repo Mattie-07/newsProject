@@ -57,18 +57,20 @@
             </div>
 
 
-        <div class="container">
-            <h2 class="mt-5">Today's Top Headlines</h2>
-            <div class="scrolling-wrapper row flex-row flex-nowrap mt-4 pb-4 pt-2" id="card-container">
-            </div>
-
             <h2 class="mt-5">What's going on in the technology industry</h2>
             <div class="scrolling-wrapper row flex-row flex-nowrap mt-4 pb-4 pt-2" id="tech-container">
+
             </div>
 <!-- scroll cards  -->
             <h2 class="mt-5">Your Health. Today.</h2>
             <div class="scrolling-wrapper row flex-row flex-nowrap mt-4 pb-4 pt-2" id="health-container">
             </div>
+
+            <h2 class="mt-5">Your own new preference</h2>
+            <div class="scrolling-wrapper row flex-row flex-nowrap mt-4 pb-4 pt-2" id="yourNews">
+            </div>
+
+
             <div class="row" id="article">
             <div class="col-10">
                 <article class="article">
@@ -78,7 +80,6 @@
                         <input class="input" type="text" /><br>
                         <input type="submit"/>
                     </form>
-
                     <div class="container" id="news-return">
                         <ul class="news-return"></ul>
                     </div>
@@ -88,11 +89,57 @@
             </div>
         </div>
 
+        <aside class="row">
+            <div class="chat">
+                <div class="container col-6">
+                    <form name="chatForm" class="form-horizontal chat-form">
+                        <label for="chat-username" class="col-sm-2 control-label text-dark">Username</label>
+                        <div class="col">
+                            <input type="text" class="form-control" id="chat-username" required
+                                placeholder="Enter your name">
+                        </div><!-- col-->
+                        <label for="chat-message" class="col-sm-2 control-label text-dark">Message</label>
+                        <div class="col">
+                            <div class="input-group">
+                                <input type="text" placeholder="Enter a message, then press enter"
+                                    class="form-control" id="chat-message" rows="4" autocomplete="off" required>
+                                <span class="input-group-btn">
+                                    <button id="chat-submit" class="btn btn-info" type="submit"><i class="fa fa-paper-plane fa-2x"></i></button>
+                                </span>
+                            </div><!-- input-group -->
+                        </div><!-- col -->
+                    </form>
+                </div>
+            </div>
+        </aside>
+                <div class="container chat-container col-6">
+                    <div class="col-sm-10 panel-body chat-display">
+                        <p class="text-muted chat-text"></p>
+                    </div><!-- panel-body -->
+                </div><!-- panel-default -->
+            </div>
+    </div><!-- panel-default -->
+    <div class="row pt-5">  
+        <div class="jumbotron d-none d-lg-block width-100" style="height:200px;  background-size: 100%; font-size: 80px; color: rgb(255, 255, 255)">
+    </div>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.0.5/socket.io.js"></script>
+        <script src="js/chat.js"></script>
+
+
+
 
 
         <script>
+        const searchEngine = document.querySelector('.search');
+        const input = document.querySelector('.input');
+        const newsReturn = document.querySelector('.news-return');
+        searchEngine.addEventListener('submit', retrieve);
+
         var date = new Date ();
+       
         var api = "713c8aaef64445869dfa951229e58456"
+
         fetch(`http://newsapi.org/v2/top-headlines?country=us&from=${date}&sortBy=publishedAt&apiKey=${api}`)
             .then(response => response.json())
             .then(data => {
@@ -111,7 +158,6 @@
                                 <div class="card-body">
                                     <h5 class="card-title">${news}</h5>
                                     <p class="card-text">${description}</p>
-                                    <p class="card-text"></p>
                                     <a href="${urlLink}" class="btn btn-primary" id='readArticle'>See The Article!</a>
                                     <a href="#" class="btn">Save</a>
 
@@ -174,7 +220,6 @@
                                 <div class="card-body">
                                     <h5 class="card-title">${news}</h5>
                                     <p class="card-text">${description}</p>
-                                    <p class="card-text"></p>
                                     <a href="${urlLink}" class="btn btn-primary" id='readArticle'>See The Article!</a>
                                     <a href="#" class="btn btn-primary">Save</a>
                                 </div>
@@ -190,6 +235,50 @@
                 console.log(error)
             })
 
+            function retrieve(e){
+            if(input.value == ''){
+                alert('Input field is empty!')
+                return
+                            }
+
+                newsReturn.innerHTML = '';
+                e.preventDefault();
+                let topic = input.value;
+
+
+        fetch(`http://newsapi.org/v2/everything?q=${topic}&from=${date}&sortBy=publishedAt&apiKey=${api}`)
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+                for(var x = 0; x < 5 ; x++){
+                    let news = data.articles[x].title;
+                    let description = data.articles[x].description;
+                    let image = data.articles[x].urlToImage;
+                    let urlLink = data.articles[x].url
+                    let cards = document.querySelector("#yourNews");
+                    let newCard = document.createElement('div')
+                    newCard.setAttribute("class", "col-5")
+                    newCard.innerHTML = `           
+                            <div class="card" style="width: 18rem;">
+                                <img class="card-img-top" src="${image}" id="img" alt="Card image cap">
+                                <div class="card-body">
+                                    <h5 class="card-title">${news}</h5>
+                                    <p class="card-text">${description}</p>
+                                    <a href="${urlLink}" class="btn btn-primary" id='readArticle'>See The Article!</a>
+                                    <a href="#" class="btn btn-primary">Save</a>
+                                </div>
+                            </div>`
+
+                            
+                    cards.appendChild(newCard);
+                }
+                
+
+            })
+            .catch((error)=>{
+                console.log(error)
+            })
+        }
         </script>
         
         <%- include('partials/template/jsdefault.ejs')  %>
