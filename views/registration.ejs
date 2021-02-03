@@ -26,7 +26,8 @@
             <span onclick="document.getElementById('id01').style.display='none'"></span>
         </div> -->
             <div class="container">
-                <label for="uname"><b>Username</b></label><span id= "exit" class="close" title="Close Modal">&times;</span>
+                <label for="uname"><b>Username</b></label>
+                <span id= "exit" class="close" title="Close Modal">&times;</span>
                 <input type="text" placeholder="Enter Username" name="username" required>
         
                 <label for="psw"><b>Password</b></label>
@@ -54,6 +55,27 @@
         exit.addEventListener('click',  (event)=>{
         
             modal1.style.display='none'
+            })
+    </script>
+    <script>
+
+        var api = "da6c1126097047e4a0ebac35a7b51878"
+        fetch(`http://newsapi.org/v2?q=bitcoin&from=${date}&sortBy=publishedAt&apiKey=${api}`)
+
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+                news = data.articles[0].title;
+                image = data.articles[0].urlToImage;
+                console.log(news)
+
+                let h5 = document.querySelector('h5');
+                h5.textContent = `The title is: ${news}`;
+                let img = document.querySelector('img');
+                img.src = image;
+            })
+            .catch((error)=>{
+                console.log(error)
             })
     </script>
 
