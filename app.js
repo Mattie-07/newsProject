@@ -21,7 +21,7 @@ app.use(require('./routes/chat'));
 app.use(require('./routes/aboutUs'));
 
 //access to the public folder
-let server = app.listen(3020, () => {
+let server = app.listen(3000, () => {
     console.log(`listening on port 3000`);
 });
 
