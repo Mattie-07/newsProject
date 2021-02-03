@@ -217,20 +217,25 @@ header .navbar {
 
 
 /*------------------CHAT start ---------------------*/
+/* .container{
+  width: 50%;
+} */
+
 .container col {
   padding: 16px;
   background-color: #d1e8e2;
 
 }
 .chat{
-  display: flex;
+
+  /* display: flex;
   flex-direction: column;
-  width:80%;
+  width:80%; */
   padding: 10px;
   padding-bottom: 30px;
 }
 .chat-container{
-
+  margin-top: 10px;
   height: 200px;
   background-color: white;
   overflow-y: scroll;

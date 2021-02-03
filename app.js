@@ -17,12 +17,13 @@ app.use(require('./routes/index'));
 app.use(require('./routes/registration'));
 app.use(require('./routes/login'));
 app.use(require('./routes/saved'));
+app.use(require('./routes/aboutUs'));
 app.use(require('./routes/error'));
 app.use(require('./routes/aboutUs'));
 
 
 //access to the public folder
-let server = app.listen(3000, () => {
+let server = app.listen(3005, () => {
     console.log(`listening on port 3000`);
 });
 
