@@ -1,12 +1,12 @@
-const express = require("express");
-const router = express.Router();
-const axios = require('axios');
-const authReq = require('../auth');
+// const express = require("express");
+// const router = express.Router();
+// const axios = require('axios');
+// const authReq = require('../auth');
 
 
 
 //universal--------------------------
-const api = `7235e9c528744dd09cfafa0d2cc35723`;
+const api = `da6c1126097047e4a0ebac35a7b51878`;
 const api2 = `da6c1126097047e4a0ebac35a7b51878`;
 const date = new Date(); //goes for bit coin below....
 
@@ -49,16 +49,21 @@ const date = new Date(); //goes for bit coin below....
 //     });
 // }
 //----------Top Headlines-----------------------------------
-let title = fetch(`https://newsapi.org/v2/top-headlines?country=us&apiKey=${api}`);
-let img = fetch(`https://newsapi.org/v2/top-headlines?country=us&apiKey=${api2}`);
+let title = "";
+title = fetch(`http://newsapi.org/v2/everything?q=bitcoin&from=${date}&sortBy=publishedAt&apiKey=${api}`);
+let img 
+img = fetch(`https://newsapi.org/v2/top-headlines?country&from=${date}=us&apiKey=${api2}`);
     Promise.all([title], [img]) //these are responses
     .then( files =>{
         files.forEach(file=>{
-            process(file.json() );
-            console.log(file);
+
+            process (file.json());
+            console.log(file)
+
         })
-        .catch(err=>{
-            return('error')
+
+        .catch(error=>{
+            return(error)
         });
         let process = (prom) =>{
             prom.then(data=>{  //wait until it is resolved
@@ -147,12 +152,12 @@ let img = fetch(`https://newsapi.org/v2/top-headlines?country=us&apiKey=${api2}`
 
 //router -------------------------------------
 
-router.get('/' , (req, res) =>{
-    res.render('index2')
-})
+// router.get('/' , (req, res) =>{
+//     res.render('index2')
+// })
 
 
 
 
 
-module.exports = router;
+// module.exports = router;
