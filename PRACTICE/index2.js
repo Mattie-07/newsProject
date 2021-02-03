@@ -11,43 +11,43 @@ const api2 = `da6c1126097047e4a0ebac35a7b51878`;
 const date = new Date(); //goes for bit coin below....
 
 // ------------------search API --------------------------------------------------
-// const searchEngine = document.querySelector('.search');
-// const input = document.querySelector('.input');
-// const newsReturn = document.querySelector('.news-return');
-// searchEngine.addEventListener('submit', retrieve);
+const searchEngine = document.querySelector('.search');
+const input = document.querySelector('.input');
+const newsReturn = document.querySelector('.news-return');
+searchEngine.addEventListener('submit', retrieve);
 
 
-// function retrieve(e){
-//     if(input.value == ''){
-//         alert('Input field is empty!')
-//         return
-//     }
+function retrieve(e){
+    if(input.value == ''){
+        alert('Input field is empty!')
+        return
+    }
 
-//     newsReturn.innerHTML = '';
-//     e.preventDefault();
-//     let topic = input.value;
+    newsReturn.innerHTML = '';
+    e.preventDefault();
+    let topic = input.value;
 
-//     let urlToImage = `http://newsapi.org/v2/everything?q=${topic}&apiKey=${api}`
-//     //ADD AUTHOR/URL----------------********
-//     fetch(urlToImage).then((res)=>{
-//         return res.json()
-//                //return response in JSON format
-//     })
-//     .then((data)=>{
-//         console.log(data)
-//         data.articles.forEach(article =>{
-//             let li = document.createElement('li');
-//             let a = document.createElement('a');
-//             a.setAttribute('href', data)
-//             a.setAttribute('target', '_blank');
-//             a.textContent = article.urlToImage;  //what would i do instead of textContent??
-//             li.appendChild(a);
-//             newsReturn.appendChild(li);
-//         })
-//     }).catch((error)=>{
-//         console.log(error)
-//     });
-// }
+    let urlToImage = `http://newsapi.org/v2/everything?q=${topic}&apiKey=${api}`
+    //ADD AUTHOR/URL----------------********
+    fetch(urlToImage).then((res)=>{
+        return res.json()
+               //return response in JSON format
+    })
+    .then((data)=>{
+        console.log(data)
+        data.articles.forEach(article =>{
+            let li = document.createElement('li');
+            let a = document.createElement('a');
+            a.setAttribute('href', data)
+            a.setAttribute('target', '_blank');
+            a.textContent = article.urlToImage;  //what would i do instead of textContent??
+            li.appendChild(a);
+            newsReturn.appendChild(li);
+        })
+    }).catch((error)=>{
+        console.log(error)
+    });
+}
 //----------Top Headlines-----------------------------------
 let title = "";
 title = fetch(`http://newsapi.org/v2/everything?q=bitcoin&from=${date}&sortBy=publishedAt&apiKey=${api}`);

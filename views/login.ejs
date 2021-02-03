@@ -15,26 +15,17 @@
           <span onclick="document.getElementById('id01').style.display='none'"></span>
         </div>
           <form class="modal-content animate" action="post" method="post">
-          
-        
             <div class="container">
-              <label for="uname"><b>Username</b></label><span onclick="document.getElementById('id01').style.display='none'
-              "class="close" title="Close Modal">&times;</span>
+              <label for="uname"><b>Username</b></label><span onclick="document.getElementById('id01').style.display='none' "class="close" title="Close Modal">&times;</span>
               <input type="text" placeholder="Enter Username" name="name" required>
-        
               <label for="psw"><b>Password</b></label>
               <input type="password" placeholder="Enter Password" name="password" required>
-                
               <button type="submit">Login</button>
-              
-
             </div>
           </form>
         </div>
-        
         <script>
         // Get the modal
-
         var button = document.getElementById('login');
         var modal = document.getElementById('id01');
         button.addEventListener('click',  (event)=>{
@@ -45,10 +36,7 @@
             }
         })
         // When the user clicks anywhere outside of the modal, close it
-        
-        
         </script>
-        
         <%- include('partials/template/jsdefault.ejs')  %>
     </body>
 </html>
