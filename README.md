@@ -31,17 +31,18 @@ Other:
 - JSON
 ___
 ## MVP (Minimum Viable Product):
-- Desigining and hosting a zodiac page on AWS.
--
+- Creating a dynamic user interface that allows the user to register/login to view news sources.
+- users can easily search through different articles
+
 - Responsive design
 ___
 ## Stretch Goals Completed:
-- one
-- two
-- three
+-  users can use a chat box to talk about todays headlines
+- users can use search engine to find articles
+- 
 ___
 ## Stretch Goals Future:
-- one
+- users can save articles of their liking, whcih are saved in the database
 - two
 - three
 ___
