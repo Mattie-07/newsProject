@@ -68,39 +68,32 @@
 
 
         <aside class="row">
-            <div class="chat-page">
-                <div class="msg-inbox">
-                    <div class="chats">
+            <div class="chat">
+                <div class="container col-6">
                     <form name="chatForm" class="form-horizontal chat-form">
-                        <div class="form-group">
-                            <label for="chat-username" class="col-sm-2 control-label text-white">Name</label>
-                            <div class="col-sm-10">
-                                <input type="text" class="form-control" id="chat-username" required
-                                    placeholder="Enter your name">
-                            </div><!-- col-sm-10 -->
-                        </div><!-- form-group -->
-                        <div class="form-group">
-                            <label for="chat-message" class="col-sm-2 control-label text-white">Message</label>
-                            <div class="col-sm-10">
-                                <div class="input-group">
-                                    <input type="text" placeholder="Enter a message, then press enter"
-                                        class="form-control" id="chat-message" rows="4" autocomplete="off" required>
-                                    <span class="input-group-btn">
-                                        <button id="chat-submit" class="btn btn-info" type="submit">Chat</button>
-                                    </span>
-                                </div><!-- input-group -->
-                            </div><!-- col-sm-10 -->
-                        </div><!-- form-group -->
+                        <label for="chat-username" class="col-sm-2 control-label text-dark">Username</label>
+                        <div class="col">
+                            <input type="text" class="form-control" id="chat-username" required
+                                placeholder="Enter your name">
+                        </div><!-- col-->
+                        <label for="chat-message" class="col-sm-2 control-label text-dark">Message</label>
+                        <div class="col">
+                            <div class="input-group">
+                                <input type="text" placeholder="Enter a message, then press enter"
+                                    class="form-control" id="chat-message" rows="4" autocomplete="off" required>
+                                <span class="input-group-btn">
+                                    <button id="chat-submit" class="btn btn-info" type="submit"><i class="fa fa-paper-plane fa-2x"></i></button>
+                                </span>
+                            </div><!-- input-group -->
+                        </div><!-- col -->
                     </form>
-
-                    </div>
                 </div>
+                <div class="container chat-container col-6">
+                    <div class="col-sm-10 panel-body chat-display">
+                        <p class="text-muted chat-text"></p>
+                    </div><!-- panel-body -->
+                </div><!-- panel-default -->
             </div>
-        </div>
-        <div class="container chat-container">
-            <div class="col-sm-10 panel-body chat-display">
-                <p class="text-muted chat-text "></p>
-            </div><!-- panel-body -->
         </aside>
     </div><!-- panel-default -->
 
