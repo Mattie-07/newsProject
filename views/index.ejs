@@ -7,12 +7,53 @@
     </style>
     <body>
         <%- include('partials/template/header.ejs')  %>
+        
+        <!-- Chat popup -->
+        <button class="open-button" onclick="openForm()">Chat</button>
+        <div class="chat-popup" id="myForm">
+            <form class="form-container">
+                <label for="chat-username" class="col control-label text-white">Username</label>
+                <div class="col">
+                    <input type="text" class="form-control" id="chat-username" required
+                        placeholder="Enter your name">
+                </div><!-- col-->
+                <label for="chat-message" class="col control-label text-white">Message</label>
+                <div class="col">
+                    <div class="input-group">
+                        <input type="text" placeholder="Enter message here"
+                            class="form-control" id="chat-message" rows="4" autocomplete="off" required>
+                        <span class="input-group-btn">
+                            <button id="chat-submit" class="btn btn-info" type="submit"><i class="fa fa-paper-plane"></i></button>
+                        </span>
+                    </div><!-- input-group -->
+                </div><!-- col -->
+                <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+                <div class="chat-container">
+                    <div class="col-sm-10 panel-body chat-display">
+                        <p class="text-muted chat-text"></p>
+                    </div><!-- panel-body -->
+                </div><!-- panel-default -->  
+            </form>
+        </div>
+
+        <!-- chat open/close button -->
+        <script>
+        function openForm() {
+          document.getElementById("myForm").style.display = "block";
+        }
+        function closeForm() {
+          document.getElementById("myForm").style.display = "none";
+        }
+        </script>
+
+        <!-- chat js stuff -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.0.5/socket.io.js"></script>
+        <script src="js/chat.js"></script>
+        
         <div class="container">
             <h2 class="mt-5">Today's Top Headlines</h2>
             <div class="scrolling-wrapper row flex-row flex-nowrap mt-4 pb-4 pt-2" id="card-container">
             </div>
-
-
 
 
         <div class="container">
@@ -45,24 +86,6 @@
                 </article>
             </div>
         </div>
-    </div><!-- panel-default -->
-    <div class="row pt-5">  
-        <div class="jumbotron d-none d-lg-block width-100" style="height:200px;  background-size: 100%; font-size: 80px; color: rgb(255, 255, 255)">
-    </div>
-        <!-- <h1></h1>
-        <img src="" class="img-responsive">    -->
-        <script src="js/search.js"></script>
-
-            <div class="container chat-container">
-                <div class="col-sm-10 panel-body chat-display">
-                    <p class="text-muted chat-text"></p>
-                </div><!-- panel-body -->
-            </div><!-- panel-default -->
-        </div>
-
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.0.5/socket.io.js"></script>
-        <script src="js/chat.js"></script>
-
 
 
 
