@@ -18,7 +18,16 @@ body{
 
 
 }
-
+header .jumbotron {
+  height: 40vh;
+  margin-bottom: 0;
+  background: url('../public/images/darkBlueGlobe.jpeg') no-repeat 100% 5%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-position-y: -220px;
+  }
 /* .container{
 
 

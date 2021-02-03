@@ -1,4 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('partials/template/headDefault.ejs')  %>
+</head>
 
+<body>
+    <%- include('partials/template/header.ejs')  %>
+
+    <%- include('partials/template/jsdefault.ejs')  %>
 
     <div class="container bg-primary">
         <div class="chat-page">
@@ -36,3 +45,8 @@
         </div><!-- panel-body -->
     </div><!-- panel-default -->
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.0.5/socket.io.js"></script>
+    <script src="js/chat.js"></script>
+</body>
+
+</html>
