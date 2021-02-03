@@ -16,11 +16,12 @@ app.use(express.static('public'));
 app.use(require('./routes/index'));
 app.use(require('./routes/registration'));
 app.use(require('./routes/login'));
+app.use(require('./routes/saved'));
 app.use(require('./routes/error'));
-// app.use(require('./routes/chat'));
+
 
 //access to the public folder
-let server = app.listen(3000, () => {
+let server = app.listen(3004, () => {
     console.log(`listening on port 3000`);
 });
 

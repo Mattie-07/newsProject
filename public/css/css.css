@@ -11,6 +11,7 @@ body{
 * {box-sizing:border-box}
 /*carousel header*/
 .card-header {
+  display: flex;
   background:transparent;
   text-align:center;
   padding:1em 0;
@@ -18,11 +19,31 @@ body{
 
 
 }
+.card{
+  display: flex;
+}
+.scrolling-wrapper{
+	overflow-x: auto;
+}
+
+header .jumbotron {
+  height: 40vh;
+  margin-bottom: 0;
+  background: no-repeat 100% 5%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-position-y: -220px;
+  }
+/* .container{
+
 /* 
 .container{
 
 
-}
+
+} */
 
 /* Slideshow container */
 .slideshow-container {
@@ -143,7 +164,7 @@ body{
 
 
 /*------------------CHAT start ---------------------*/
-.container {
+.container col {
   padding: 16px;
   background-color: #d1e8e2;
 
