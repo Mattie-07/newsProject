@@ -11,6 +11,7 @@ body{
 * {box-sizing:border-box}
 /*carousel header*/
 .card-header {
+  display: flex;
   background:transparent;
   text-align:center;
   padding:1em 0;
@@ -18,11 +19,17 @@ body{
 
 
 }
+.card{
+  display: flex;
+}
+.scrolling-wrapper{
+	overflow-x: auto;
+}
 
 header .jumbotron {
   height: 40vh;
   margin-bottom: 0;
-  background: url('../public/images/darkBlueGlobe.jpeg') no-repeat 100% 5%;
+  background: no-repeat 100% 5%;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -157,7 +164,7 @@ header .jumbotron {
 
 
 /*------------------CHAT start ---------------------*/
-.container {
+.container col {
   padding: 16px;
   background-color: #d1e8e2;
 
@@ -323,5 +330,62 @@ span.psw {
   .cancelbtn {
      width: 100%;
   }
+}
+
+/* ************about us *********** */
+/* Three columns side by side */
+.column {
+  float: left;
+  width: 25%;
+  
+  margin-bottom: 16px;
+  margin-top: 20px;
+  padding: 0 8px;
+}
+
+/* Display the columns below each other instead of side by side on small screens */
+@media screen and (max-width: 650px) {
+  .column {
+    width: 100%;
+    display: block;
+  }
+}
+
+/* Add some shadows to create a card effect */
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 1);
+  
+}
+
+/* Some left and right padding inside the container */
+.container {
+  padding: 0 16px;
+}
+
+/* Clear floats */
+.container::after, .row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.title {
+  color: grey;
+}
+
+.button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+}
+
+.button:hover {
+  background-color: #555;
 }
 
