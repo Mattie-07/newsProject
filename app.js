@@ -19,6 +19,7 @@ app.use(require('./routes/login'));
 app.use(require('./routes/saved'));
 app.use(require('./routes/aboutUs'));
 app.use(require('./routes/error'));
+app.use(require('./routes/aboutUs'));
 
 
 //access to the public folder

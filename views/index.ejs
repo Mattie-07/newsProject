@@ -11,6 +11,7 @@
         <%- include('partials/template/header.ejs')  %>
 
 
+<<<<<<< HEAD
 <div class="container col-lg-offset-6">
             <div class="container">
                 <form name="chatForm" class="form-horizontal chat-form">
@@ -45,7 +46,107 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.0.5/socket.io.js"></script>
         <script src="js/chat.js"></script>
 
-      
+        <script>
+        var date = new Date ();
+        var api = "f11810e069c8494e8039180140b7cada"
+        fetch(`http://newsapi.org/v2/top-headlines?country=us&from=${date}&sortBy=publishedAt&apiKey=${api}`)
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+                for(var x = 0; x < 5 ; x++){
+                    let news = data.articles[x].title;
+                    let image = data.articles[x].urlToImage;
+                    let urlLink = data.articles[x].url
+                    let cards = document.querySelector("#card-container");
+                    let newCard = document.createElement('div')
+                    newCard.setAttribute("class", "col-5")
+                    newCard.innerHTML = `           
+                            <div class="card" style="width: 18rem;">
+                                <img class="card-img-top" src="${image}" id="img" alt="Card image cap">
+                                <div class="card-body">
+                                    <h5 class="card-title">${news}</h5>
+                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    <a href="${urlLink}" class="btn btn-primary" id='readArticle'>See The Article!</a>
+                                    <a href="#" class="btn btn-primary">Save</a>
+
+                                </div>
+                            </div>`
+                    cards.appendChild(newCard);
+                }
+                
+
+            })
+            .catch((error)=>{
+                console.log(error)
+            })
+        fetch(`http://newsapi.org/v2/everything?q=technology&from=${date}&sortBy=publishedAt&apiKey=${api}`)
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+                for(var x = 0; x < 5 ; x++){
+                    let news = data.articles[x].title;
+
+                    let image = data.articles[x].urlToImage;
+
+                    let urlLink = data.articles[x].url
+                    let cards = document.querySelector("#tech-container");
+                    let newCard = document.createElement('div')
+                    newCard.setAttribute("class", "col-5")
+                    newCard.innerHTML = `           
+                            <div class="card" style="width: 18rem;">
+                                <img class="card-img-top" src="${image}" id="img" alt="Card image cap">
+                                <div class="card-body">
+                                    <h5 class="card-title">${news}</h5>
+                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    <a href="${urlLink}" class="btn btn-primary" id='readArticle'>See The Article!</a>
+                                    <a href="#" class="btn btn-primary">Save</a>
+
+                                </div>
+                            </div>`
+                    cards.appendChild(newCard);
+                }
+                
+
+            })
+            .catch((error)=>{
+                console.log(error)
+            })
+        fetch(`http://newsapi.org/v2/everything?q=health&from=${date}&sortBy=publishedAt&apiKey=${api}`)
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+                for(var x = 0; x < 5 ; x++){
+                    let news = data.articles[x].title;
+
+                    let image = data.articles[x].urlToImage;
+
+                    let urlLink = data.articles[x].url
+                    let cards = document.querySelector("#health-container");
+                    let newCard = document.createElement('div')
+                    newCard.setAttribute("class", "col-5")
+                    newCard.innerHTML = `           
+                            <div class="card" style="width: 18rem;">
+                                <img class="card-img-top" src="${image}" id="img" alt="Card image cap">
+                                <div class="card-body">
+                                    <h5 class="card-title">${news}</h5>
+                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    <a href="${urlLink}" class="btn btn-primary" id='readArticle'>See The Article!</a>
+                                    <a href="#" class="btn btn-primary">Save</a>
+                                </div>
+                            </div>`
+
+                            
+                    cards.appendChild(newCard);
+                }
+                
+
+            })
+            .catch((error)=>{
+                console.log(error)
+            })
+
+        </script>
+>>>>>>> main
         <%- include('partials/template/jsdefault.ejs')  %>
 
     </body>
