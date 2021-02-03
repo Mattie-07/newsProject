@@ -22,6 +22,9 @@ body{
 .card{
   display: flex;
 }
+.scrolling-wrapper{
+	overflow-x: auto;
+}
 
 header .jumbotron {
   height: 40vh;

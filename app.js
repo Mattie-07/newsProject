@@ -21,7 +21,7 @@ app.use(require('./routes/error'));
 
 
 //access to the public folder
-let server = app.listen(3000, () => {
+let server = app.listen(3004, () => {
     console.log(`listening on port 3000`);
 });
 
