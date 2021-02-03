@@ -88,13 +88,14 @@
 
         <script>
         var date = new Date ();
-        var api = "f11810e069c8494e8039180140b7cada"
+        var api = "c0f7f211d57d4822b8ee00ecd0307d1d"
         fetch(`http://newsapi.org/v2/top-headlines?country=us&from=${date}&sortBy=publishedAt&apiKey=${api}`)
             .then(response => response.json())
             .then(data => {
                 console.log(data);
                 for(var x = 0; x < 5 ; x++){
                     let news = data.articles[x].title;
+                    let description = data.articles[x].description;
                     let image = data.articles[x].urlToImage;
                     let urlLink = data.articles[x].url
                     let cards = document.querySelector("#card-container");
@@ -105,6 +106,7 @@
                                 <img class="card-img-top" src="${image}" id="img" alt="Card image cap">
                                 <div class="card-body">
                                     <h5 class="card-title">${news}</h5>
+                                    <p class="card-text">${description}</p>
                                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                                     <a href="${urlLink}" class="btn btn-primary" id='readArticle'>See The Article!</a>
                                     <a href="#" class="btn btn-primary">Save</a>
@@ -125,9 +127,8 @@
                 console.log(data);
                 for(var x = 0; x < 5 ; x++){
                     let news = data.articles[x].title;
-
+                    let description = data.articles[x].description;
                     let image = data.articles[x].urlToImage;
-
                     let urlLink = data.articles[x].url
                     let cards = document.querySelector("#tech-container");
                     let newCard = document.createElement('div')
@@ -137,7 +138,7 @@
                                 <img class="card-img-top" src="${image}" id="img" alt="Card image cap">
                                 <div class="card-body">
                                     <h5 class="card-title">${news}</h5>
-                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    <p class="card-text">${description}</p>
                                     <a href="${urlLink}" class="btn btn-primary" id='readArticle'>See The Article!</a>
                                     <a href="#" class="btn btn-primary">Save</a>
 
@@ -157,9 +158,8 @@
                 console.log(data);
                 for(var x = 0; x < 5 ; x++){
                     let news = data.articles[x].title;
-
+                    let description = data.articles[x].description;
                     let image = data.articles[x].urlToImage;
-
                     let urlLink = data.articles[x].url
                     let cards = document.querySelector("#health-container");
                     let newCard = document.createElement('div')
@@ -169,6 +169,7 @@
                                 <img class="card-img-top" src="${image}" id="img" alt="Card image cap">
                                 <div class="card-body">
                                     <h5 class="card-title">${news}</h5>
+                                    <p class="card-text">${description}</p>
                                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                                     <a href="${urlLink}" class="btn btn-primary" id='readArticle'>See The Article!</a>
                                     <a href="#" class="btn btn-primary">Save</a>
