@@ -19,8 +19,14 @@ body{
 
 
 }
-.card{
+.card-container{
   display: flex;
+  width: 25rem;
+}
+.btn{
+  background-color: #D1E8E2;
+  color:#2C3531
+
 }
 .mt-5{
 
