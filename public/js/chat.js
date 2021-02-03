@@ -4,6 +4,13 @@ const socket = io();
 let chatUsername = document.querySelector('#chat-username');
 let chatMessage = document.querySelector('#chat-message');
 
+function formatDate(date) {
+    const h = "0" + date.getHours();
+    const m = "0" + date.getMinutes();
+
+    return `${h.slice(-2)}:${m.slice(-2)}`;
+}  
+
 socket.on('connect', ()=>{
 
     
@@ -36,7 +43,7 @@ socket.on('connect', ()=>{
             newMessage.className = "text-dark chat-text"
         }
 
-        newMessage.innerHTML = `<strong>${data.username}</strong>: ${data.message}`;
+        newMessage.innerHTML = `<strong>${data.username}</strong>(${formatDate(new Date())}): ${data.message}`;
 
         chatDisplay.insertBefore(newMessage, chatDisplay.firstChild);
     })

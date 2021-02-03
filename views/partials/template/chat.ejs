@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
     <%- include('partials/template/headDefault.ejs')  %>
 </head>
 
 <body>
     <%- include('partials/template/header.ejs')  %>
-
-    <%- include('partials/template/jsdefault.ejs')  %>
-
-    <div class="container bg-primary">
+        <div class="container bg-primary">
         <div class="chat-page">
             <div class="msg-inbox">
                 <div class="chats">
@@ -44,6 +45,14 @@
             <p class="text-muted chat-text "></p>
         </div><!-- panel-body -->
     </div><!-- panel-default -->
+
+
+    <%- include('partials/template/jsdefault.ejs')  %>
+
+
+
+
+<script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.0.5/socket.io.js"></script>
     <script src="js/chat.js"></script>
