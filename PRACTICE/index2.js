@@ -27,9 +27,10 @@ function retrieve(e){
     e.preventDefault();
     let topic = input.value;
 
-    let urlToImage = `http://newsapi.org/v2/everything?q=${topic}&apiKey=${api}`
+    let urlToImage = `http://newsapi.org/v2/everything?q=${topic}&from=${date}&sortBy=publishedAt&apiKey=${api}`
     //ADD AUTHOR/URL----------------********
-    fetch(urlToImage).then((res)=>{
+    fetch(urlToImage)
+    .then((res)=>{
         return res.json()
                //return response in JSON format
     })
