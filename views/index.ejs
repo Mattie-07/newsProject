@@ -9,6 +9,48 @@
     <body>
 
         <%- include('partials/template/header.ejs')  %>
+        
+        <!-- Chat popup -->
+        <button class="open-button" onclick="openForm()">Chat</button>
+        <div class="chat-popup" id="myForm">
+            <form class="form-container">
+                <label for="chat-username" class="col control-label text-white">Username</label>
+                <div class="col">
+                    <input type="text" class="form-control" id="chat-username" required
+                        placeholder="Enter your name">
+                </div><!-- col-->
+                <label for="chat-message" class="col control-label text-white">Message</label>
+                <div class="col">
+                    <div class="input-group">
+                        <input type="text" placeholder="Enter message here"
+                            class="form-control" id="chat-message" rows="4" autocomplete="off" required>
+                        <span class="input-group-btn">
+                            <button id="chat-submit" class="btn btn-info" type="submit"><i class="fa fa-paper-plane"></i></button>
+                        </span>
+                    </div><!-- input-group -->
+                </div><!-- col -->
+                <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+                <div class="chat-container">
+                    <div class="col-sm-10 panel-body chat-display">
+                        <p class="text-muted chat-text"></p>
+                    </div><!-- panel-body -->
+                </div><!-- panel-default -->  
+            </form>
+        </div>
+
+        <!-- chat open/close button -->
+        <script>
+        function openForm() {
+          document.getElementById("myForm").style.display = "block";
+        }
+        function closeForm() {
+          document.getElementById("myForm").style.display = "none";
+        }
+        </script>
+
+        <!-- chat js stuff -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.0.5/socket.io.js"></script>
+        <script src="js/chat.js"></script>
 
 
         <div class="container">
@@ -32,8 +74,6 @@
                         <input class="input" type="text" /><br>
                         <input type="submit"/>
                     </form>
-                
-                
                     <div class="container" id="news-return">
                         <ul class="news-return"></ul>
                     </div>
@@ -43,35 +83,6 @@
             </div>
         </div>
 
-
-        <div class="container">
-            <div class="container">
-                <form name="chatForm" class="form-horizontal chat-form">
-                    <label for="chat-username" class="col control-label text-dark">Username</label>
-                    <div class="col">
-                        <input type="text" class="form-control" id="chat-username" required
-                            placeholder="Enter your name">
-                    </div><!-- col-->
-                    <label for="chat-message" class="col control-label text-dark">Message</label>
-                    <div class="col">
-                        <div class="input-group">
-                            <input type="text" placeholder="Enter a message, then press enter"
-                                class="form-control" id="chat-message" rows="4" autocomplete="off" required>
-                            <span class="input-group-btn">
-                                <button id="chat-submit" class="btn btn-info" type="submit"><i class="fa fa-paper-plane fa-x"></i></button>
-                            </span>
-                        </div><!-- input-group -->
-                    </div><!-- col -->
-                </form>
-            </div>
-            <div class="container chat-container">
-                <div class="col-sm-10 panel-body chat-display">
-                    <p class="text-muted chat-text"></p>
-                </div><!-- panel-body -->
-            </div><!-- panel-default -->
-        </div>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.0.5/socket.io.js"></script>
-        <script src="js/chat.js"></script>
 
 
 
