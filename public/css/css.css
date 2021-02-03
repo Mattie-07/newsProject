@@ -22,6 +22,12 @@ body{
 .card{
   display: flex;
 }
+.mt-5{
+
+  color: #ffcb9a;
+  
+
+}
 .scrolling-wrapper{
 	overflow-x: auto;
 }
@@ -55,11 +61,7 @@ header .jumbotron {
 }
 
 /* Hide the images by default */
-.mySlides {
-  /* display: none; */
-  border:10px dotted rgb(92, 53, 143)
 
-}
 #img1,#img2, #img3, #img4, #img5, #img6{
   overflow: hidden;
   height: 300px;

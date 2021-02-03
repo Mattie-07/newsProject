@@ -12,6 +12,61 @@
 
 
         <div class="container">
+            <h2 class="mt-5">Today's Top Headlines</h2>
+            <div class="scrolling-wrapper row flex-row flex-nowrap mt-4 pb-4 pt-2">
+                <div class="col-5">
+                    <div class="card" style="width: 18rem;">
+                        <img class="card-img-top" src="..." alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title"></h5>
+                            <p class="card-text"></p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-5">
+                    <div class="card" style="width: 18rem;">
+                        <img class="card-img-top" src="..." alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title"></h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-5">
+                    <div class="card" style="width: 18rem;">
+                        <img class="card-img-top" src="..." alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-5">
+                    <div class="card" style="width: 18rem;">
+                        <img class="card-img-top" src="..." alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-5">
+                    <div class="card" style="width: 18rem;">
+                        <img class="card-img-top" src="..." alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+   <!--scroll cards-->   
+   <h2 class="mt-5">What's going on with BITCOIN</h2>
             <div class="scrolling-wrapper row flex-row flex-nowrap mt-4 pb-4 pt-2">
                 <div class="col-5">
                     <div class="card" style="width: 18rem;">
@@ -64,60 +119,8 @@
                     </div>
                 </div>
             </div>
-   <!--scroll cards-->         
-            <div class="scrolling-wrapper row flex-row flex-nowrap mt-4 pb-4 pt-2">
-                <div class="col-5">
-                    <div class="card" style="width: 18rem;">
-                        <img class="card-img-top" src="..." alt="Card image cap">
-                        <div class="card-body">
-                            <h5 class="card-title"></h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-5">
-                    <div class="card" style="width: 18rem;">
-                        <img class="card-img-top" src="..." alt="Card image cap">
-                        <div class="card-body">
-                            <h5 class="card-title"></h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-5">
-                    <div class="card" style="width: 18rem;">
-                        <img class="card-img-top" src="..." alt="Card image cap">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-5">
-                    <div class="card" style="width: 18rem;">
-                        <img class="card-img-top" src="..." alt="Card image cap">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-5">
-                    <div class="card" style="width: 18rem;">
-                        <img class="card-img-top" src="..." alt="Card image cap">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-<!--scroll cards-->    
+<!--scroll cards--> 
+        <h2 class="mt-5">Most Notable Sources</h2>
             <div class="scrolling-wrapper row flex-row flex-nowrap mt-4 pb-4 pt-2">
                 <div class="col-5">
                     <div class="card" style="width: 18rem;">
@@ -235,7 +238,7 @@
         <script>
 
         var date = new Date ();
-        var api = "da6c1126097047e4a0ebac35a7b51878"
+        var api = "c0f7f211d57d4822b8ee00ecd0307d1d"
         fetch(`http://newsapi.org/v2/everything?q=bitcoin&from=${date}&sortBy=publishedAt&apiKey=${api}`)
 
             .then(response => response.json())
@@ -243,12 +246,16 @@
                 console.log(data);
                 news = data.articles[0].title;
                 image = data.articles[0].urlToImage;
+                pageUrl = data.articles[0].url;
                 console.log(news)
 
                 let h5 = document.querySelector('h5');
-                h5.textContent = `The title is: ${news}`;
+                h5.textContent = `${news}`;
                 let img = document.querySelector('img');
                 img.src = image;
+                // let btn = document.querySelector('btn');
+                // btn.click = pageUrl;
+                // console.log(btn)
             })
             .catch((error)=>{
                 console.log(error)
