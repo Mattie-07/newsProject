@@ -1,14 +1,14 @@
-// const express = require("express");
-// const router = express.Router();
-// const axios = require('axios');
-// const authReq = require('../auth');
+const express = require("express");
+const router = express.Router();
+const axios = require('axios');
+const authReq = require('../auth');
 
 
 
 //universal--------------------------
 const api = `da6c1126097047e4a0ebac35a7b51878`;
-const api2 = `da6c1126097047e4a0ebac35a7b51878`;
-const date = new Date(); //goes for bit coin below....
+// const api2 = `da6c1126097047e4a0ebac35a7b51878`;
+// const date = new Date(); //goes for bit coin below....
 
 // ------------------search API --------------------------------------------------
 const searchEngine = document.querySelector('.search');
