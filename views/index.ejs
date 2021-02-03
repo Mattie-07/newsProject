@@ -4,40 +4,69 @@
         <%- include('partials/template/headDefault.ejs')  %>
     </head>
     <style>
-
     </style>
     <body>
-
         <%- include('partials/template/header.ejs')  %>
-
-
-<<<<<<< HEAD
-<div class="container col-lg-offset-6">
-            <div class="container">
-                <form name="chatForm" class="form-horizontal chat-form">
-                    <label for="chat-username" class="col control-label text-dark">Username</label>
-                    <div class="col">
-                        <input type="text" class="form-control" id="chat-username" required
-                            placeholder="Enter your name">
-                    </div><!-- col-->
-                    <label for="chat-message" class="col control-label text-dark">Message</label>
-                    <div class="col">
-                        <div class="input-group">
-                            <input type="text" placeholder="Enter a message, then press enter"
-                                class="form-control" id="chat-message" rows="4" autocomplete="off" required>
-                            <span class="input-group-btn">
-                                <button id="chat-submit" class="btn btn-info" type="submit"><i class="fa fa-paper-plane fa-x"></i></button>
-                            </span>
-                        </div><!-- input-group -->
-                    </div><!-- col -->
-                </form>
+        <div class="container">
+            <h2 class="mt-5">Today's Top Headlines</h2>
+            <div class="scrolling-wrapper row flex-row flex-nowrap mt-4 pb-4 pt-2" id="card-container">
             </div>
-            <div class="container chat-container">
-                <div class="col-sm-10 panel-body chat-display">
-                    <p class="text-muted chat-text"></p>
-                </div><!-- panel-body -->
-            </div><!-- panel-default -->
-</div>
+
+            <h2 class="mt-5">What's going on in the technology industry</h2>
+            <div class="scrolling-wrapper row flex-row flex-nowrap mt-4 pb-4 pt-2" id="tech-container">
+            </div>
+<!-- scroll cards  -->
+            <h2 class="mt-5">Your Health. Today.</h2>
+            <div class="scrolling-wrapper row flex-row flex-nowrap mt-4 pb-4 pt-2" id="health-container">
+            </div>
+            
+            <div class="row" id="article">
+            <div class="col-10">
+                <article class="article">
+                    <h1 class="article-title">Search News</h1>
+                    <form class="search" action="">
+                        <label for="">News</label>
+                        <input class="input" type="text" /><br>
+                        <input type="submit"/>
+                    </form>
+                    <div class="container" id="news-return">
+                        <ul class="news-return"></ul>
+                    </div>
+                    <p></p>
+                    <p></p>
+                </article>
+            </div>
+        </div>
+        <aside class="row">
+            <div class="chat">
+                <div class="container col-6">
+                    <form name="chatForm" class="form-horizontal chat-form">
+                        <label for="chat-username" class="col-sm-2 control-label text-dark">Username</label>
+                        <div class="col">
+                            <input type="text" class="form-control" id="chat-username" required
+                                placeholder="Enter your name">
+                        </div><!-- col-->
+                        <label for="chat-message" class="col-sm-2 control-label text-dark">Message</label>
+                        <div class="col">
+                            <div class="input-group">
+                                <input type="text" placeholder="Enter a message, then press enter"
+                                    class="form-control" id="chat-message" rows="4" autocomplete="off" required>
+                                <span class="input-group-btn">
+                                    <button id="chat-submit" class="btn btn-info" type="submit"><i class="fa fa-paper-plane fa-2x"></i></button>
+                                </span>
+                            </div><!-- input-group -->
+                        </div><!-- col -->
+                    </form>
+                </div>
+            </div>
+        </aside>
+                <div class="container chat-container col-6">
+                    <div class="col-sm-10 panel-body chat-display">
+                        <p class="text-muted chat-text"></p>
+                    </div><!-- panel-body -->
+                </div><!-- panel-default -->
+            </div>
+    </div><!-- panel-default -->
     <div class="row pt-5">  
         <div class="jumbotron d-none d-lg-block width-100" style="height:200px;  background-size: 100%; font-size: 80px; color: rgb(255, 255, 255)">
     </div>
