@@ -23,8 +23,9 @@ app.use(require('./routes/aboutUs'));
 
 
 //access to the public folder
-let server = app.listen(4001, () => {
-    console.log(`listening on port 3000`);
+let routeNum = 3001;
+let server = app.listen(`${routeNum}`, () => {
+    console.log(`listening on port ${routeNum}`);
 });
 
 //io.attach(server)
