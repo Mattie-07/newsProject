@@ -12,7 +12,7 @@
         <!-- Chat popup -->
         <button class="open-button" onclick="openForm()">Chat</button>
         <div class="chat-popup" id="myForm">
-            <form class="form-container">
+            <form class="form-container" style="z-index: 6;">
                 <label for="chat-username" class="col control-label text-white">Username</label>
                 <div class="col">
                     <input type="text" class="form-control" id="chat-username" required
@@ -132,7 +132,7 @@
                     let newCard = document.createElement('div')
                     newCard.setAttribute("class", "col-5")
                     newCard.innerHTML = `           
-                            <div class="card" style="width: 18rem;">
+                            <div class="card" style="width: 25rem;">
                                 <img class="card-img-top" src="${image}" id="img" alt="Card image cap">
                                 <div class="card-body">
                                     <h5 class="card-title">${news}</h5>
@@ -163,7 +163,7 @@
                     let newCard = document.createElement('div')
                     newCard.setAttribute("class", "col-5")
                     newCard.innerHTML = `           
-                            <div class="card" style="width: 18rem;">
+                            <div class="card" style="width: 25rem; z-index: 2">
                                 <img class="card-img-top" src="${image}" id="img" alt="Card image cap">
                                 <div class="card-body">
                                     <h5 class="card-title">${news}</h5>
